@@ -1,0 +1,31 @@
+@startuml
+skinparam actorStyle Hollow
+skinparam style strictuml
+
+actor Usuario as U1
+collections "Vista" as V1 
+control Control as C1
+
+U1 ->> C1 : Iniciar programa
+V1 <<- C1 : Mostrar formulario
+U1 <<-- V1 
+U1 <- V1: Preguntar datos
+activate V1
+U1 ->> V1 : Datos
+V1 ->> V1 : Validar datos
+V1 ->> C1 : Validar datos
+V1 ->> C1 : Datos
+
+deactivate V1
+V1 <<- C1 : Mostrar rutas
+U1 <<-- V1 
+U1 <- V1: Preguntar opciones
+activate V1
+U1 ->> V1 : Seleccionar opciones
+V1 ->> V1 : Validar opciones
+V1 ->> C1 : Validar opciones
+V1 ->> C1 : Opciones
+deactivate V1
+
+footer \nDiagrama casos de uso − RumboBici(20250228) | @rodrigomardel\n versión %version()
+@enduml
