@@ -14,23 +14,19 @@ CREATE TABLE usuarios (
 -- Tabla: categorias
 CREATE TABLE categorias (
     id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT NULL,
-    imagen_url VARCHAR(500) NOT NULL
+    nombre VARCHAR(100) NOT NULL
 );
 
 -- Tabla: rutas
 CREATE TABLE rutas (
     id_ruta INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT NULL,
     localidad VARCHAR(100) NOT NULL,
     kilometros INT NOT NULL,
     fecha_inicio DATE NOT NULL,
     fecha_fin DATE NOT NULL,
     plazas INT NOT NULL DEFAULT 0,
     precio DECIMAL(6, 2) NOT NULL DEFAULT 0,
-    imagen_url VARCHAR(500) NOT NULL,
     id_categoria INT NOT NULL,
     FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );

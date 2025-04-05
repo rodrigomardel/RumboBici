@@ -10,18 +10,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
+/*Construcción con la anotación «.» sin necesidad de getters y setters */
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "usuarios")
 public class UsuarioModel {
 
     @Id
+    //Valor generado automáticamente por la base de datos (AUTO_INCREMENT)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
     private Long idUsuario;
@@ -36,6 +40,7 @@ public class UsuarioModel {
     private String correoElectronico;
 
     @Column(name = "fecha_nacimiento", nullable = false)
+    // Guarda solo día mes y año
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
 }
