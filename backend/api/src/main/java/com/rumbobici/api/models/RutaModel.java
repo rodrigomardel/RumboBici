@@ -58,7 +58,7 @@ public class RutaModel {
     private int precioRuta;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria_ruta", nullable = false)
+    @JoinColumn(name = "id_categoria", nullable = false)
     private CategoriaRutaModel idCategoriaRuta;
     
 }

@@ -33,18 +33,18 @@ public class UsuarioRestController {
         return ResponseEntity.ok(users);
     }
 
-    @GetMapping("/usuarios/{id}")
+    @GetMapping("/usuario/{id}")
     public ResponseEntity<UsuarioModel> obtenerUsuarioPorId(@PathVariable Long id) {
         Optional<UsuarioModel> user = usuarioService.obtenerUsuarioPorId(id);
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/usuarios")
+    @PostMapping("/usuario")
     public ResponseEntity<?> crearUsuario(@RequestBody UsuarioModel userModel) {
         // validación todos los campos son obligatorios
         Map<String, String> errores = new HashMap<>();
 
-        if (userModel.getNombre() == null || userModel.getNombre().trim().isEmpty()) {
+        if (userModel.getNombreUsuario() == null || userModel.getNombreUsuario().trim().isEmpty()) {
             errores.put("nombre", "El nombre es obligatorio");
         }
         if (userModel.getContrasena() == null || userModel.getContrasena().trim().isEmpty()) {
@@ -65,7 +65,7 @@ public class UsuarioRestController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
     }
 
-    @PutMapping("/usuarios/{id}")
+    @PutMapping("/usuario/{id}")
     public ResponseEntity<?> actualizarUsuario(@PathVariable Long id, @RequestBody UsuarioModel userModel) {
         // verifica si el usuario existe
         Optional<UsuarioModel> updatedUser = usuarioService.actualizarUsuario(id, userModel);
@@ -76,9 +76,9 @@ public class UsuarioRestController {
         }
     }
 
-    @DeleteMapping("/usuarios/{id}")
-    public ResponseEntity<Void> eleminarUsuario(@PathVariable Long id) {
-        boolean isDeleted = usuarioService.eleminarUsuario(id);
+    @DeleteMapping("/usuario/{id}")
+    public ResponseEntity<Void> eliminarUsuario(@PathVariable Long id) {
+        boolean isDeleted = usuarioService.eliminarUsuario(id);
         if (isDeleted) {
             return ResponseEntity.noContent().build();
         } else {

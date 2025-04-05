@@ -27,8 +27,8 @@ CREATE TABLE ruta (
     fecha_fin DATE NOT NULL,
     plazas_ruta INT NOT NULL DEFAULT 0,
     precio_ruta DECIMAL(6, 2) NOT NULL DEFAULT 0,
-    id_categoria_ruta INT NOT NULL,
-    FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
+    id_categoria INT NOT NULL,
+    FOREIGN KEY (id_categoria) REFERENCES categoria_ruta(id_categoria)
 );
 
 -- Tabla: usuarios_rutas (Tabla intermedia)
@@ -37,6 +37,6 @@ CREATE TABLE usuario_ruta (
     id_ruta INT NOT NULL,
     fecha_realizacion DATE NOT NULL,
     PRIMARY KEY (id_usuario, id_ruta),
-    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
-    FOREIGN KEY (id_ruta) REFERENCES rutas(id_ruta)
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    FOREIGN KEY (id_ruta) REFERENCES ruta(id_ruta)
 );

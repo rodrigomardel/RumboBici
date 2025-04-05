@@ -34,7 +34,7 @@ public class UsuarioService {
         return Optional.empty();
     }
 
-    public boolean eleminarUsuario(Long id) {
+    public boolean eliminarUsuario(Long id) {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
             return true;
