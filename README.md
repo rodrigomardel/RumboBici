@@ -1,2 +1,2 @@
 # RumboBici
-Aplicación web para le gestión de usuarios en actividades cicloturistas
+Aplicación web para la gestión de usuarios en actividades cicloturistas

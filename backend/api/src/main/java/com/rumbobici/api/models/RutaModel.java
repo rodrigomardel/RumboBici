@@ -1,4 +1,4 @@
-package com.rumbobici.api.models.ruta;
+package com.rumbobici.api.models;
 
 import java.util.Date;
 
@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "rutas")
+@Table(name = "ruta")
 public class RutaModel {
 
     @Id
@@ -32,33 +32,33 @@ public class RutaModel {
     @Column(name = "id_ruta")
     private Long idRuta;
 
-    @Column(name = "nombre", nullable = false, length = 100)
-    private String nombre;
+    @Column(name = "nombre_ruta", nullable = false, length = 100)
+    private String nombreRuta;
 
-    @Column(name = "localidad", nullable = false, length = 100)
-    private String localidad;
+    @Column(name = "localidad_ruta", nullable = false, length = 100)
+    private String localidadRuta;
 
-    @Column(name = "kilometros", nullable = false, length = 6)
-    private int kilometros;
+    @Column(name = "kilometros_ruta", nullable = false, length = 6)
+    private int kilometrosRuta;
 
     @Column(name = "fecha_inicio", nullable = false)
-    // Guarda solo día mes y año
+    //Guarda solo día mes y año
     @Temporal(TemporalType.DATE)
     private Date fechaInicio;
 
     @Column(name = "fecha_fin", nullable = false)
-    // Guarda solo día mes y año
+    //Guarda solo día mes y año
     @Temporal(TemporalType.DATE)
     private Date fechaFin;
 
-    @Column(name = "plazas", nullable = true, length = 2)
-    private int plazas;
+    @Column(name = "plazas_ruta", nullable = true, length = 2)
+    private int plazasRuta;
 
-    @Column(name = "precio", nullable = false, length = 4)
-    private int precio;
+    @Column(name = "precio_ruta", nullable = false, length = 4)
+    private int precioRuta;
 
     @ManyToOne
-    @JoinColumn(name = "categoria_id", nullable = false)
-    private CategoriaRutaModel categoria;
+    @JoinColumn(name = "id_categoria_ruta", nullable = false)
+    private CategoriaRutaModel idCategoriaRuta;
     
 }

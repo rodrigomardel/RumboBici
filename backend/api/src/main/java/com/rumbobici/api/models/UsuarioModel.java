@@ -1,12 +1,15 @@
 package com.rumbobici.api.models;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -16,12 +19,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-/*Construcción con la anotación «.» sin necesidad de getters y setters */
+// Construcción con la anotación «.» sin necesidad de getters y setters
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "usuarios")
+@Table(name = "usuario")
 public class UsuarioModel {
 
     @Id
@@ -30,8 +33,8 @@ public class UsuarioModel {
     @Column(name = "id_usuario")
     private Long idUsuario;
 
-    @Column(name = "nombre", nullable = false, length = 100)
-    private String nombre;
+    @Column(name = "nombre_usuario", nullable = false, length = 100)
+    private String nombreUsuario;
 
     @Column(name = "contrasena", nullable = false, length = 255)
     private String contrasena;
@@ -40,7 +43,10 @@ public class UsuarioModel {
     private String correoElectronico;
 
     @Column(name = "fecha_nacimiento", nullable = false)
-    // Guarda solo día mes y año
+    //Guarda solo día mes y año
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<UsuarioRutaModel> rutasRealizadas = new ArrayList<>();
 }
