@@ -1,3 +1,21 @@
+/* COLORES
+-------------------------------------------------- */
+// $color-magenta: #a6006f;
+// $color-marron: #332f1a;
+// $color-dorado: #a68d00;
+// $color-verde-oscuro: #1b4f51;
+// $color-turquesa: #00a0a6;
+// $color-morado: #40229a;
+
+// $color-blanco: #ffffff;
+// $color-negro: #000000;
+// $color-gris-claro: #f5f5f5;
+// $color-gris-oscuro: #333333;
+
+// $bg-light: $color-gris-claro;
+// $bg-dark: $color-negro;
+// $bg-primary: $color-marron;
+
 /* GLOBAL STYLES
 -------------------------------------------------- */
 @font-face {
@@ -27,31 +45,6 @@ body {
 img {
   max-width: 100%;
   height: auto;
-}
-a:hover {
-  text-decoration: underline;
-  color: #cf8c21 !important;
-}
-.fixed-size {
-  width: 40px !important;
-  height: 40px !important;
-  object-fit: contain;
-}
-
-/* Estilo boton de acción*/
-.btn-act:hover {
-  color: #ffffff !important;
-  text-decoration: none;
-}
-.btn {
-  text-shadow: 2px 2px rgba(0, 0, 0, 1);
-}
-.btn-login {
-  border: 1px solid black !important;
-  text-shadow: none;
-}
-.btn-login:hover {
-  text-decoration: none;
 }
 /* MAIN
     ---------------------------------------------------------*/
@@ -96,13 +89,4 @@ footer {
       text-decoration: none;
     }
   }
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
