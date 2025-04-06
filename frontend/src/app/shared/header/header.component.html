@@ -1,1 +1,35 @@
-<p>header works!</p>
+<mat-toolbar>
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img src="img/logos/logo-3color-200x150.svg" alt="logo-rumbobici" />
+
+  <span style="flex: auto"></span>
+
+  <button
+    class="btn-home"
+    mat-stroked-button
+    [routerLink]="['/home']"
+    *ngIf="mostrarHomeButton"
+  >
+    Home
+  </button>
+
+  <button
+    class="btn-login"
+    mat-stroked-button
+    [routerLink]="['/home']"
+    *ngIf="mostrarLoginButton"
+  >
+    Login
+  </button>
+
+  <button
+    class="btn-perfil"
+    mat-stroked-button
+    [routerLink]="['/perfil']"
+    *ngIf="mostrarPerfilButton"
+  >
+    Perfil
+  </button>
+</mat-toolbar>

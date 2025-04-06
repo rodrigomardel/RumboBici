@@ -1,0 +1,20 @@
+mat-toolbar {
+  padding: 4rem;
+  background-color: rgba(255, 255, 255, 0.466);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  mat-icon {
+    color: black;
+  }
+}
+
+img {
+  padding-left: 2rem;
+}
+
+button {
+  color: black;
+}
