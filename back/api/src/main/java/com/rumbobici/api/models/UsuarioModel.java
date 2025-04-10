@@ -1,24 +1,15 @@
 package com.rumbobici.api.models;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "usuario")
@@ -47,20 +38,24 @@ public class UsuarioModel {
     // @OneToMany(mappedBy = "usuario")
     // private List<UsuarioRutaModel> rutasRealizadas = new ArrayList<>();
 
-    public Long getId() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public String getNombre() {
-        return getNombre();
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public String getEmail() {
-        return getEmail();
+    public String getCorreoElectronico() {
+        return correoElectronico;
     }
 
     public String getContrasena() {
-        return getContrasena();
+        return contrasena;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
     public void setId(Long idUsuario) {

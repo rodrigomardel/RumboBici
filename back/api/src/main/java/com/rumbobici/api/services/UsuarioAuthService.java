@@ -21,7 +21,7 @@ public class UsuarioAuthService {
             throw new Exception("Contraseña incorrecta");
         }
 
-        return new UsuarioAuthResponseDto(user.getId(), user.getNombre(), user.getEmail());
+        return new UsuarioAuthResponseDto(user.getIdUsuario(), user.getNombreUsuario(), user.getCorreoElectronico());
     }
 
 }
