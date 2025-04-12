@@ -6,6 +6,7 @@ a68d00-dorado
 #40229A- morado
 
 //header / footer
+#492C48
 #a7e3e6 - azul cielo
 
 

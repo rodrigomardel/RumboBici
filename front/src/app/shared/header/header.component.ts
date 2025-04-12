@@ -9,29 +9,32 @@ import { filter } from 'rxjs';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  mostrarDrawer = false;
-  mostrarHome = false;
-  mostrarLogin = false;
-  mostrarPerfil = false;
-  mostrarSalir = false;
+  mostrarDrawer: boolean = false;
+  mostrarHome: boolean = false;
+  mostrarLogin: boolean = false;
+  mostrarPerfil: boolean = false;
+  mostrarSalir: boolean = false;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    // Observable para los cambios en la navegación
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        const ruta = event.urlAfterRedirects;
+        let ruta = event.urlAfterRedirects;
         this.actualizarBotones(ruta);
         this.mostrarDrawer = ['/perfil', '/usuarios', '/rutas'].includes(ruta);
+        console.log(ruta);
       });
   }
 
+  // Visualización de los botones en función del enrutamiento
   actualizarBotones(ruta: string): void {
-    this.mostrarHome = ['/perfil', '/usuarios', '/rutas', '/login'].includes(
+    this.mostrarLogin = ['/home'].includes(ruta);
+    this.mostrarHome = ['/login', '/perfil', '/usuarios', '/rutas'].includes(
       ruta
     );
-    this.mostrarLogin = ['/home'].includes(ruta);
     this.mostrarPerfil = ['/perfil', '/usuarios', '/rutas'].includes(ruta);
     this.mostrarSalir = ['/perfil', '/usuarios', '/rutas'].includes(ruta);
   }

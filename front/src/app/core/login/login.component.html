@@ -1,23 +1,20 @@
-<mat-card>
-  <mat-card-title>Iniciar Sesión</mat-card-title>
-  <form [formGroup]="loginForm">
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Usuario</mat-label>
-      <input matInput type="text" formControlName="nombreUsuario" required />
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Contraseña</mat-label>
-      <input matInput type="password" formControlName="contrasena" required />
-    </mat-form-field>
-
-    <button
-      mat-raised-button
-      color="primary"
-      type="submit"
-      [disabled]="loginForm.invalid"
-    >
-      Entrar
-    </button>
-  </form>
-</mat-card>
+<div class="ctn">
+  <mat-card>
+    <mat-card-title>Iniciar Sesión</mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Usuario</mat-label>
+        <input matInput type="text" formControlName="nombreUsuario" [(ngModel)]="usuario.nombreUsuario" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="contrasena" [(ngModel)]="usuario.contrasena" required />
+      </mat-form-field>
+      <div class="ctn-buttons">
+        <button btn btn-login mat-raised-button type="submit" [disabled]="loginForm.invalid">
+          Entrar
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
