@@ -1,5 +1,5 @@
 # RumboBici
-Aplicación web full stack cuyo propósito es registrar y gestionar las actividades realizadas en bicicleta, fomentando al mismo tiempo su uso como medio de ocio saludable y sostenible. 
+Aplicación web full stack cuyo propósito es registrar y gestionar las actividades realizadas en bicicleta.
 
 A través de la plataforma, los usuarios pueden visualizar y clasificar las rutas realizadas, agrupándolas por categorías predefinidas como cicloturismo, montaña o carretera.
 
