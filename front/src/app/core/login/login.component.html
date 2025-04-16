@@ -3,12 +3,39 @@
     <mat-card-title>Iniciar Sesión</mat-card-title>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <mat-form-field appearance="outline" class="full-width">
+        <!---------- CAMPO USUARIO ---------->
         <mat-label>Usuario</mat-label>
         <input matInput type="text" formControlName="nombreUsuario" [(ngModel)]="usuario.nombreUsuario" required />
+        <mat-error *ngIf="loginForm.get('nombreUsuario')?.invalid && loginForm.get('nombreUsuario')?.touched">
+          <div *ngIf="loginForm.get('nombreUsuario')?.hasError('required')">
+            El nombre de usuario es obligatorio.
+          </div>
+          <div *ngIf="loginForm.get('nombreUsuario')?.hasError('minlength')">
+            Debe tener al menos 4 caracteres.
+          </div>
+          <div *ngIf="loginForm.get('nombreUsuario')?.hasError('maxlength')">
+            No puede superar los 20 caracteres.
+          </div>
+          <div *ngIf="loginForm.get('nombreUsuario')?.hasError('pattern')">
+            Solo se permiten letras, números y guiones bajos.
+          </div>
+        </mat-error>
       </mat-form-field>
+      <!---------- CAMPO CONTRASEÑA ---------->
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Contraseña</mat-label>
         <input matInput type="password" formControlName="contrasena" [(ngModel)]="usuario.contrasena" required />
+        <mat-error *ngIf="loginForm.get('contrasena')?.invalid && loginForm.get('contrasena')?.touched">
+          <div *ngIf="loginForm.get('contrasena')?.hasError('required')">
+            La contraseña es obligatoria.
+          </div>
+          <div *ngIf="loginForm.get('contrasena')?.hasError('minlength')">
+            Debe tener al menos 7 caracteres.
+          </div>
+          <div *ngIf="loginForm.get('contrasena')?.hasError('pattern')">
+            Debe contener al menos una minúscula, una mayúscula y un número.
+          </div>
+        </mat-error>
       </mat-form-field>
       <div class="ctn-buttons">
         <button btn btn-login mat-raised-button type="submit" [disabled]="loginForm.invalid">

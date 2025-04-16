@@ -1,5 +1,6 @@
 mat-toolbar {
-  padding: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   background-color: #ffffff8c;
   backdrop-filter: blur(8px);
   position: sticky;
@@ -15,8 +16,17 @@ img {
   padding-left: 2rem;
 }
 
-@media (max-width: 570px) {
+.img-mobile {
+  display: none;
+}
+
+@media (max-width: 775px) {
   img {
     display: none;
+  }
+
+  .img-mobile {
+    display: block;
+    padding-left: 0 !important;
   }
 }

@@ -1,8 +1,8 @@
-a6006f-magenta
+e00097ff-magenta
 332f1a-marron
 a68d00-dorado
 1b4f51-verde oscuro
-00a0a6-turquesa
+00c5ccff-turquesa
 #40229A- morado
 
 //header / footer

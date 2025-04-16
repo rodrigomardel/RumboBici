@@ -6,6 +6,7 @@ import { PerfilComponent } from './core/perfil/perfil.component';
 import { UsuariosComponent } from './shared/usuarios/usuarios.component';
 import { RutasComponent } from './shared/rutas/rutas.component';
 import { LoginComponent } from './core/login/login.component';
+import { CategoriasComponent } from './shared/categorias/categorias.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'rutas', component: RutasComponent },
+  { path: 'categorias', component: CategoriasComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' },
 ];
@@ -21,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

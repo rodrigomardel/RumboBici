@@ -14,7 +14,8 @@ CREATE TABLE usuario (
 -- Tabla: categorias
 CREATE TABLE categoria_ruta (
     id_categoria BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nombre_categoria VARCHAR(100) NOT NULL
+    nombre_categoria VARCHAR(100) NOT NULL,
+    url_imagen VARCHAR(255)
 );
 
 -- Tabla: rutas
@@ -37,3 +38,7 @@ CREATE TABLE usuario_ruta (
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
     FOREIGN KEY (id_ruta) REFERENCES ruta(id_ruta)
 );
+
+--deployName: railway
+--user: root
+--pass: oyAPTkKBlwJpzGjiihnxDsZczEqkcpwk

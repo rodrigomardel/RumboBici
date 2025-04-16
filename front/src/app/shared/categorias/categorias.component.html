@@ -1,0 +1,30 @@
+<div *ngIf="categorias && categorias.length > 0" class="container">
+    <h2 class="mb-4 title">Categorías Disponibles</h2>
+    <div class="row">
+        <div *ngFor="let categoria of categorias" class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5 class="card-title">Categoría</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>ID:</strong> {{ categoria.idCategoria }}</p>
+                    <p><strong>Nombre:</strong> {{ categoria.nombreCategoria }}</p>
+                    <img [src]="categoria.urlImagen" alt="Imagen de {{ categoria.nombreCategoria }}"
+                        class="img-fluid categoria-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="categorias.length === 0" class="container">
+    <div class="alert alert-warning" role="alert">
+        No hay categorias disponibles.
+    </div>
+</div>
+
+<div *ngIf="errorMsg" class="container">
+    <div class="alert alert-danger" role="alert">
+        {{ errorMsg }}
+    </div>
+</div>

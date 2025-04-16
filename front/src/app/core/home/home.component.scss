@@ -1,0 +1,24 @@
+.ctn-movil {
+    display: none;
+}
+
+.h1-mobile {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: black;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    text-align: center;
+    top: 70px;
+}
+
+@media (max-width: 775px) {
+    .ctn-movil {
+        display: block;
+        padding-left: 0 !important;
+    }
+
+    .ctn-carrousel {
+        display: none;
+    }
+}

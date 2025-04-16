@@ -21,7 +21,8 @@ import { RutasComponent } from './shared/rutas/rutas.component';
 import { AuthUserLoginService } from './core/services/auth-user-login.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { CategoriasComponent } from './shared/categorias/categorias.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MatInputModule } from '@angular/material/input';
     PerfilComponent,
     UsuariosComponent,
     RutasComponent,
+    CategoriasComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { MatInputModule } from '@angular/material/input';
     MatListModule,
     RouterLink,
     RouterOutlet,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ],
   providers: [
     AuthUserLoginService,
@@ -55,4 +58,4 @@ import { MatInputModule } from '@angular/material/input';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
