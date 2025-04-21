@@ -36,7 +36,7 @@ CREATE TABLE usuario_ruta (
     fecha_realizacion DATE NOT NULL,
     PRIMARY KEY (id_usuario, id_ruta),
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
-    FOREIGN KEY (id_ruta) REFERENCES ruta(id_ruta)
+    FOREIGN KEY (id_ruta) REFERENCES ruta(id_ruta) ON DELETE CASCADE
 );
 
 --deployName: railway

@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
    * Redirige al perfil si el usuario ya ha iniciado sesión anteriormente.
    */
   ngOnInit(): void {
-    const yaLogueado = localStorage.getItem('nombreUsuario');
+    const yaLogueado = localStorage.getItem('idUsuario');
     if (yaLogueado) {
       this.router.navigate(['/perfil']);
     }
@@ -67,13 +67,14 @@ export class LoginComponent implements OnInit {
    */
   login() {
     const request = {
+      idUsuario: this.usuario.idUsuario,
       nombreUsuario: this.usuario.nombreUsuario,
       contrasena: this.usuario.contrasena,
     };
 
     this.authUserLoginService.login(request).subscribe({
       next: (response) => {
-        localStorage.setItem('nombreUsuario', response.nombreUsuario);
+        localStorage.setItem('idUsuario', response.idUsuario.toString());
         this.router.navigate(['/perfil']);
       },
       error: (error) => {

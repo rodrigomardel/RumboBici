@@ -12,8 +12,6 @@ export class CategoriasComponent {
 
   /** Lista de las categorías que se van a mostrar */
   categorias: Categoria[] = [];
-  /** Mensaje de error en caso de fallo al obtener las categorías */
-  errorMsg: string = '';
 
   constructor(private categoriaService: CategoriaService) { }
 
@@ -31,8 +29,7 @@ export class CategoriasComponent {
         this.categorias = data;
       },
       error: (error) => {
-        console.error('Error al obtener los usuarios:', error);
-        this.errorMsg = 'Hubo un error al cargar las categorías.';
+        console.error('Error al obtener las categorías:', error);
       }
     });
   }

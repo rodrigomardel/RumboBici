@@ -1,0 +1,33 @@
+<div class="ctn-modal">
+    <h2 class="modal-title text-center">Agregar Nueva Ruta</h2>
+    <form [formGroup]="rutaForm" (ngSubmit)="guardarRuta()" class="container">
+        <div class="mb-3">
+            <label for="nombreRuta" class="form-label">Nombre de la Ruta</label>
+            <input type="text" id="nombreRuta" class="form-control" formControlName="nombreRuta" required>
+        </div>
+        <div class="mb-3">
+            <label for="localidadRuta" class="form-label">Localidad</label>
+            <input type="text" id="localidadRuta" class="form-control" formControlName="localidadRuta" required>
+        </div>
+        <div class="mb-3">
+            <label for="kilometrosRuta" class="form-label">Kilómetros</label>
+            <input type="number" id="kilometrosRuta" class="form-control" formControlName="kilometrosRuta" required>
+        </div>
+        <div class="mb-3">
+            <label for="fechaRuta" class="form-label">Fecha</label>
+            <input type="date" id="fechaRuta" class="form-control" formControlName="fechaRuta" required>
+        </div>
+        <div class="mb-3">
+            <label for="nombreCategoria" class="form-label">Categoría</label>
+            <mat-select class="form-control" formControlName="nombreCategoria" required>
+                <mat-option *ngFor="let categoria of categorias" [value]="categoria.idCategoria">
+                    {{ categoria.idCategoria }} - {{ categoria.nombreCategoria }}
+                </mat-option>
+            </mat-select>
+        </div>
+        <div class="d-flex justify-content-center gap-4 mt-5">
+            <button class="btn btn-salir" mat-raised-button (click)="cancelar()">Cancelar</button>
+            <button class="btn btn-home" mat-stroked-button [disabled]="rutaForm.invalid">Guardar</button>
+        </div>
+    </form>
+</div>

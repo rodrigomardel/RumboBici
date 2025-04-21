@@ -12,8 +12,6 @@ export class UsuariosComponent implements OnInit {
 
   /** Lista de usuarios que se va a mostrar */
   usuarios: Usuario[] = [];
-  /** Mensaje de error en caso de fallo al obtener los usuarios */
-  errorMsg: string = '';
 
   constructor(private authUserLoginService: AuthUserLoginService) { }
 
@@ -32,7 +30,6 @@ export class UsuariosComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error al obtener los usuarios:', error);
-        this.errorMsg = 'Hubo un error al cargar los usuarios.';
       }
     });
   }

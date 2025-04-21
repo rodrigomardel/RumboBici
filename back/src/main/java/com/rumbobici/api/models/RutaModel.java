@@ -1,64 +1,89 @@
-// package com.rumbobici.api.models;
+package com.rumbobici.api.models;
 
-// import java.util.Date;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
-// import jakarta.persistence.Column;
-// import jakarta.persistence.Entity;
-// import jakarta.persistence.GeneratedValue;
-// import jakarta.persistence.GenerationType;
-// import jakarta.persistence.Id;
-// import jakarta.persistence.JoinColumn;
-// import jakarta.persistence.ManyToOne;
-// import jakarta.persistence.Table;
-// import jakarta.persistence.Temporal;
-// import jakarta.persistence.TemporalType;
-// import lombok.AllArgsConstructor;
-// import lombok.Builder;
-// import lombok.Data;
-// import lombok.NoArgsConstructor;
+import java.util.Date;
 
-// @Entity
-// //Construcción con la anotación «.» sin necesidad de getters y setters
-// @Builder
-// @Data
-// @NoArgsConstructor
-// @AllArgsConstructor
-// @Table(name = "ruta")
-// public class RutaModel {
+@Entity
+@Table(name = "ruta")
+public class RutaModel {
 
-//     @Id
-//     //Valor generado automáticamente por la base de datos (AUTO_INCREMENT)
-//     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//     @Column(name = "id_ruta")
-//     private Integer idRuta;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_ruta")
+    private Long idRuta;
 
-//     @Column(name = "nombre_ruta", nullable = false, length = 100)
-//     private String nombreRuta;
+    @Column(name = "nombre_ruta", nullable = false, length = 100)
+    private String nombreRuta;
 
-//     @Column(name = "localidad_ruta", nullable = false, length = 100)
-//     private String localidadRuta;
+    @Column(name = "localidad_ruta", nullable = false, length = 100)
+    private String localidadRuta;
 
-//     @Column(name = "kilometros_ruta", nullable = false, length = 6)
-//     private Integer kilometrosRuta;
+    @Column(name = "kilometros_ruta", nullable = false, length = 6)
+    private Long kilometrosRuta;
 
-//     @Column(name = "fecha_inicio", nullable = false)
-//     //Guarda solo día mes y año
-//     @Temporal(TemporalType.DATE)
-//     private Date fechaInicio;
+    @Column(name = "fecha_ruta", nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date fechaRuta;
 
-//     @Column(name = "fecha_fin", nullable = false)
-//     //Guarda solo día mes y año
-//     @Temporal(TemporalType.DATE)
-//     private Date fechaFin;
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", nullable = false)
+    private CategoriaModel idCategoriaRuta;
 
-//     @Column(name = "plazas_ruta", nullable = true, length = 2)
-//     private Integer plazasRuta;
+    public Long getIdRuta() {
+        return idRuta;
+    }
 
-//     @Column(name = "precio_ruta", nullable = false, length = 4)
-//     private Integer precioRuta;
+    public String getNombreRuta() {
+        return nombreRuta;
+    }
 
-//     @ManyToOne
-//     @JoinColumn(name = "id_categoria", nullable = false)
-//     private CategoriaRutaModel idCategoriaRuta;
-    
-// }
+    public String getLocalidadRuta() {
+        return localidadRuta;
+    }
+
+    public Long getKilometrosRuta() {
+        return kilometrosRuta;
+    }
+
+    public Date getFechaRuta() {
+        return fechaRuta;
+    }
+
+    public CategoriaModel getIdCategoriaRuta() {
+        return idCategoriaRuta;
+    }
+
+    public void setIdRuta(Long idRuta) {
+        this.idRuta = idRuta;
+    }
+
+    public void setNombreRuta(String nombreRuta) {
+        this.nombreRuta = nombreRuta;
+    }
+
+    public void setLocalidadRuta(String localidadRuta) {
+        this.localidadRuta = localidadRuta;
+    }
+
+    public void setKilometrosRuta(Long kilometrosRuta) {
+        this.kilometrosRuta = kilometrosRuta;
+    }
+
+    public void setFechaRuta(Date fechaRuta) {
+        this.fechaRuta = fechaRuta;
+    }
+
+    public void setIdCategoriaRuta(CategoriaModel idCategoriaRuta) {
+        this.idCategoriaRuta = idCategoriaRuta;
+    }
+}

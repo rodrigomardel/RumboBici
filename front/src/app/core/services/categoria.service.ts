@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Usuario } from '../models/usuario.model';
 import { Categoria } from '../models/categoria.model';
+import { API_URL } from '../constants/constants';
 
 /**
  * Servicio responsable de manejar las operaciones para obtener los datos de las categorías.
@@ -11,10 +11,6 @@ import { Categoria } from '../models/categoria.model';
   providedIn: 'root',
 })
 export class CategoriaService {
-  /** URL base del endpoint de autenticación del backend */
-  private baseUrl = 'http://localhost:8080/ruta';
-  // private baseUrl = 'https://rumbobici-back-production.up.railway.app/ruta';
-
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +22,7 @@ export class CategoriaService {
    */
   obtenerCategoria(nombreCategoria: string): Observable<Categoria> {
     const params = new HttpParams().set('nombreCategoria', nombreCategoria);
-    return this.http.get<Categoria>(`${this.baseUrl}/categoria`, { params });
+    return this.http.get<Categoria>(`${API_URL}ruta/categoria`, { params });
   }
 
 
@@ -36,6 +32,6 @@ export class CategoriaService {
    * @return Observable con la lista de categorías
    */
   obtenerCategorias(): Observable<Categoria[]> {
-    return this.http.get<Categoria[]>(`${this.baseUrl}/categorias`);
+    return this.http.get<Categoria[]>(`${API_URL}ruta/categorias`);
   }
 }

@@ -1,0 +1,25 @@
+<div *ngIf="relacionRutasUsuario && relacionRutasUsuario.length > 0" class="container">
+    <h2 class="mb-4 title">Rutas {{ relacionRutasUsuario[0].ruta.idCategoriaRuta.nombreCategoria }}</h2>
+    <div class="row">
+        <div *ngFor="let usuarioRuta of relacionRutasUsuario" class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5 class="card-title">{{ usuarioRuta.ruta.nombreRuta }}</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>ID:</strong> {{ usuarioRuta.ruta.idRuta }}</p>
+                    <p><strong>Localidad:</strong> {{ usuarioRuta.ruta.localidadRuta }}</p>
+                    <p><strong>Kilometros:</strong> {{ usuarioRuta.ruta.kilometrosRuta }}</p>
+                    <p><strong>Fecha:</strong> {{ usuarioRuta.ruta.fechaRuta }}</p>
+                    <p><strong>Categoria:</strong> {{ usuarioRuta.ruta.idCategoriaRuta.nombreCategoria }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="relacionRutasUsuario.length == 0" class="container">
+    <div class="alert alert-warning" role="alert">
+        No hay rutas registradas en esta categoría
+    </div>
+</div>

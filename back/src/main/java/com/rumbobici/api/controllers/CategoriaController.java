@@ -23,7 +23,7 @@ import com.rumbobici.api.services.CategoriaService;
 @RestController
 @RequestMapping("/ruta")
 @CrossOrigin(origins = "*")
-public class CategoriaRestController {
+public class CategoriaController {
 
     @Autowired
     private CategoriaService categoriaService;

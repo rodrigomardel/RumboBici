@@ -18,6 +18,16 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long> {
 
   /**
+   * Busca un usuario por su ID de usuario.
+   * 
+   * @param idUsuario ID del usuario a buscar.
+   * @return Un {@link Optional} que contiene el {@link UsuarioModel} si fue
+   *         encontrado, o vacío si no existe.
+   * 
+   */
+  Optional<UsuarioModel> findByIdUsuario(Long idUsuario);
+
+  /**
    * Busca un usuario por su nombre de usuario.
    * 
    * @param nombreUsuario Nombre de usuario a buscar.

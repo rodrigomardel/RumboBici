@@ -54,6 +54,15 @@ public class UsuarioAuthService {
     }
 
     /**
+     * Obtener un usuario por su ID
+     * 
+     * @return el usuario correspondiente
+     */
+    public Optional<UsuarioModel> obtenerUsuarioPorId(Long idUsuario) {
+        return usuarioRepository.findByIdUsuario(idUsuario);
+    }
+
+    /**
      * Método para recuperar todos los usuarios de la base de datos.
      * 
      * @return Lista de usuarios disponibles.

@@ -3,12 +3,11 @@
     <div class="row">
         <div *ngFor="let usuario of usuarios" class="col-md-6 col-lg-4 mb-4">
             <div class="card">
-                <div class="card-header text-center">
-                    <h5 class="card-title">Perfil de Usuario</h5>
+                <div class=" text-center">
+                    <h5 class="card-header">{{ usuario.nombreUsuario }}</h5>
                 </div>
                 <div class="card-body">
                     <p><strong>ID:</strong> {{ usuario.idUsuario }}</p>
-                    <p><strong>Nombre:</strong> {{ usuario.nombreUsuario }}</p>
                     <p><strong>Correo Electrónico:</strong> {{ usuario.correoElectronico }}</p>
                     <p><strong>Fecha de Nacimiento:</strong> {{ usuario.fechaNacimiento | date: 'dd/MM/yyyy' }}</p>
                 </div>
@@ -20,11 +19,5 @@
 <div *ngIf="usuarios.length === 0" class="container">
     <div class="alert alert-warning" role="alert">
         No hay usuarios disponibles.
-    </div>
-</div>
-
-<div *ngIf="errorMsg" class="container">
-    <div class="alert alert-danger" role="alert">
-        {{ errorMsg }}
     </div>
 </div>

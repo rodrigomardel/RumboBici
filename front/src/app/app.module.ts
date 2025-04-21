@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,18 +22,26 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CategoriasComponent } from './shared/categorias/categorias.component';
+import { CategoriasRutasComponent } from './shared/categorias/categorias-rutas/categorias-rutas.component';
+import { ModalRutaComponent } from './shared/rutas/modal-ruta/modal-ruta.component';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ModalConfirmacionComponent } from './core/modal-confirmacion/modal-confirmacion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
     PerfilComponent,
     LoginComponent,
     PerfilComponent,
     UsuariosComponent,
     RutasComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    CategoriasRutasComponent,
+    ModalRutaComponent,
+    ModalConfirmacionComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,10 @@ import { CategoriasComponent } from './shared/categorias/categorias.component';
     RouterLink,
     RouterOutlet,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSelectModule,
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthUserLoginService,

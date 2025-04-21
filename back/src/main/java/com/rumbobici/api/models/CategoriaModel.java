@@ -12,7 +12,6 @@ import jakarta.persistence.Table;
 public class CategoriaModel {
 
     @Id
-    // Valor generado automáticamente por la base de datos (AUTO_INCREMENT)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria")
     private Long idCategoria;

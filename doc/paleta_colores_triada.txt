@@ -1,10 +1,14 @@
-e00097ff-magenta
-332f1a-marron
-a68d00-dorado
-1b4f51-verde oscuro
-00c5ccff-turquesa
-#40229A- morado
-
-//header / footer
-#492C48
-#a7e3e6 - azul cielo
+$color-magenta: #a6006f;
+$color-magenta-luminoso: #e00097ff;
+$color-turquesa: #00c5ccff;
+$color-turquesa-transparente: #DCF7F8;
+$color-black: black;
+$color-white: #ffffff;
+$color-rojo: rgba(228, 14, 14, 0.63);
+$color-azul: rgb(14, 160, 228);
+$color-card-bg: rgba(255, 255, 255, 0.859);
+$color-title: #332f1a;
+$color-label: #1b4f51;
+$color-text-white: #ffffff;
+$color-shadow-dark: rgba(0, 0, 0, 1);
+$color-shadow-light: rgba(0, 0, 0, 0.1);

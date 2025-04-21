@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario.model';
+import { API_URL } from '../constants/constants';
+
 
 /**
  * Interfaz para la estructura de datos enviada en el login.
@@ -28,10 +30,6 @@ export interface AuthResponse {
   providedIn: 'root',
 })
 export class AuthUserLoginService {
-  /** URL base del endpoint de autenticación del backend */
-  private baseUrl = 'http://localhost:8080/auth';
-  // private baseUrl = 'https://rumbobici-back-production.up.railway.app/auth';
-
 
   constructor(private http: HttpClient) { }
 
@@ -42,7 +40,7 @@ export class AuthUserLoginService {
    * @return Un observable que emite la respuesta del backend con datos del usuario.
    */
   login(request: AuthRequest): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.baseUrl}/login`, request);
+    return this.http.post<AuthResponse>(`${API_URL}auth/login`, request);
   }
 
   /**
@@ -51,9 +49,9 @@ export class AuthUserLoginService {
    * @param nombreUsuario Nombre de usuario a consultar.
    * @return Un observable que emite los datos del perfil del usuario.
    */
-  obtenerPerfil(nombreUsuario: string): Observable<Usuario> {
-    const params = new HttpParams().set('nombreUsuario', nombreUsuario);
-    return this.http.get<Usuario>(`${this.baseUrl}/perfil`, { params });
+  obtenerPerfil(idUsuario: number): Observable<Usuario> {
+    const params = new HttpParams().set('idUsuario', idUsuario);
+    return this.http.get<Usuario>(`${API_URL}auth/perfil`, { params });
   }
 
   /**
@@ -62,6 +60,6 @@ export class AuthUserLoginService {
    * @return Observable con la lista de usuarios
    */
   obtenerUsuarios(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.baseUrl}/usuarios`);
+    return this.http.get<Usuario[]>(`${API_URL}auth/usuarios`);
   }
 }

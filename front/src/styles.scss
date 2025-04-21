@@ -5,9 +5,12 @@
 $color-magenta: #a6006f;
 $color-magenta-luminoso: #e00097ff;
 $color-turquesa: #00c5ccff;
+$color-turquesa-luminoso: rgb(17, 240, 248);
 $color-turquesa-transparente: rgba(0, 197, 204, 0.137);
 $color-black: black;
-$color-rojo: rgba(228, 14, 14, 0.747);
+$color-white: #ffffff;
+$color-rojo: rgba(228, 14, 14, 0.63);
+$color-azul: rgb(14, 160, 228);
 $color-card-bg: rgba(255, 255, 255, 0.859);
 $color-title: #332f1a;
 $color-label: #1b4f51;
@@ -65,31 +68,37 @@ img {
   padding: 1rem;
 }
 
+h5 {
+  margin-bottom: 0px;
+  font-size: 1.3rem;
+}
+
 /* MAIN
 ---------------------------------------------------------*/
 main {
   margin: 60px;
 }
 
-div.container {
-  margin-top: 60px;
-}
-
-/* BUTTONS
+/* BOTONES
 ---------------------------------------------------------*/
 .btn {
   font-size: 1rem !important;
   border-radius: 15px !important;
   margin-left: 15px;
+
+  &:hover {
+    color: $color-text-white !important;
+    background-color: $color-magenta-luminoso !important;
+  }
 }
 
 .btn-home {
-  background-color: $color-magenta-luminoso !important;
-}
-
-.btn:hover {
-  color: $color-text-white !important;
   background-color: $color-turquesa !important;
+
+  &:hover {
+    color: $color-text-white !important;
+    background-color: $color-turquesa-luminoso !important;
+  }
 }
 
 .btn-login {
@@ -98,6 +107,61 @@ div.container {
 
 .btn-salir {
   background-color: $color-rojo !important;
+
+  &:hover {
+    color: $color-text-white !important;
+    background-color: red !important;
+  }
+}
+
+.btn-nuevo {
+  border-color: $color-magenta-luminoso;
+  color: $color-magenta-luminoso;
+}
+
+.btn-guardar {
+  border-color: $color-azul;
+  color: $color-azul;
+
+  &:hover {
+    color: $color-text-white !important;
+    background-color: $color-azul !important;
+  }
+}
+
+.ctn-nueva-ruta {
+  display: flex;
+  margin: 40px 40px;
+  justify-content: end;
+}
+
+.bi-pencil-square {
+  color: $color-azul;
+  cursor: pointer;
+}
+
+.bi-trash3 {
+  color: red;
+  cursor: pointer;
+}
+
+/* CONTAINERS
+---------------------------------------------------------*/
+.row {
+  justify-content: center;
+}
+
+div.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+div.card-body {
+  text-align: center;
+}
+
+div.alert-warning {
+  text-align: center;
 }
 
 /* FORM
@@ -116,15 +180,13 @@ div.container {
 }
 
 mat-card-title {
-  background-color: $color-turquesa-transparente;
   border-radius: 10px;
-  color: $color-black;
+  color: $color-magenta;
   font-size: 2rem !important;
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem !important;
   margin-top: 2rem !important;
-  padding: 1rem;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
 }
 
@@ -169,9 +231,63 @@ mat-form-field {
   }
 }
 
+/* MODALES
+---------------------------------------------------------*/
+.custom-modal-panel {
+  border-radius: 15px !important;
+  overflow: hidden;
+  background-color: #ffffff;
+  width: 500px;
+  max-width: 600px;
+}
+
+.modal-title {
+  font-size: 2rem;
+  color: $color-magenta;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+form.container {
+  background-color: $color-card-bg;
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+
+  .form-label {
+    color: $color-label;
+  }
+
+  .form-control {
+    border-radius: 10px;
+    border: 1px solid $color-turquesa;
+    padding: 0.5rem;
+
+    &:focus {
+      border-color: $color-magenta-luminoso;
+      box-shadow: 0 0 0 0.2rem rgba(0, 197, 204, 0.25);
+    }
+  }
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    .mat-form-field-label {
+      color: $color-label !important;
+    }
+
+    .mat-select {
+      background-color: white;
+      border-radius: 10px;
+    }
+  }
+
+}
+
 /* PANELES
 ---------------------------------------------------------*/
-
 mat-grid-list {
   margin: 20px;
   padding: 20px;
@@ -210,6 +326,14 @@ mat-card-content {
   }
 }
 
+.card-link {
+  text-decoration: none;
+}
+
+.categoria-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
 
 /* CAROUSEL
 ---------------------------------------------------------*/
@@ -252,7 +376,7 @@ footer {
     padding-bottom: 10px;
 
     a {
-      color: $color-magenta-luminoso;
+      color: $color-magenta;
       text-decoration: none;
     }
   }

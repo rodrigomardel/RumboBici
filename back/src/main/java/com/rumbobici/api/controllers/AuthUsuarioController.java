@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -15,8 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.rumbobici.api.dto.UsuarioAuthRequestDto;
 import com.rumbobici.api.dto.UsuarioAuthResponseDto;
 import com.rumbobici.api.dto.UsuarioDatosPerfilDto;
+import com.rumbobici.api.models.RutaModel;
 import com.rumbobici.api.models.UsuarioModel;
 import com.rumbobici.api.services.UsuarioAuthService;
+import com.rumbobici.api.services.UsuarioRutaService;
 
 /**
  * Controlador REST encargado de gestionar la autenticación de usuarios
@@ -28,10 +31,13 @@ import com.rumbobici.api.services.UsuarioAuthService;
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin(origins = "*")
-public class AuthUsuarioRestController {
+public class AuthUsuarioController {
 
     @Autowired
     private UsuarioAuthService usuarioAuthService;
+
+    @Autowired
+    private UsuarioRutaService usuarioRutaService;
 
     /**
      * Endpoint para autenticar a un usuario con sus credenciales.
@@ -58,9 +64,9 @@ public class AuthUsuarioRestController {
      *                   datos.
      */
     @GetMapping("/perfil")
-    public UsuarioDatosPerfilDto obtenerPerfil(@RequestParam String nombreUsuario) throws Exception {
+    public UsuarioDatosPerfilDto obtenerPerfil(@RequestParam Long idUsuario) throws Exception {
         UsuarioModel usuario = usuarioAuthService
-                .obtenerDatosUsuario(nombreUsuario)
+                .obtenerUsuarioPorId(idUsuario)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
         return new UsuarioDatosPerfilDto(
@@ -82,6 +88,17 @@ public class AuthUsuarioRestController {
     @GetMapping("/usuarios")
     public List<UsuarioModel> obtenerTodosLosUsuarios() {
         return usuarioAuthService.obtenerTodosLosUsuarios();
+    }
+
+    /**
+     * Obtener las rutas realizadas por un usuario específico.
+     * 
+     * @param idUsuario el ID del usuario.
+     * @return una lista de rutas realizadas por el usuario.
+     */
+    @GetMapping("/rutas-usuario/{idUsuario}")
+    public List<RutaModel> obtenerRutasPorUsuario(@PathVariable Long idUsuario) {
+        return usuarioRutaService.obtenerRutasPorUsuario(idUsuario);
     }
 
 }
