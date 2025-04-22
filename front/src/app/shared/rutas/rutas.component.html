@@ -7,23 +7,16 @@
     </svg>
     Nueva Ruta
   </button>
-  <button *ngIf="editando" class="btn btn-guardar" (click)="guardarCambios()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-floppy"
-      viewBox="0 0 16 16">
-      <path d="M11 2H9v3h2z" />
-      <path
-        d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
-    </svg>
-    Guardar cambios
-  </button>
 </div>
 <div *ngIf="rutasUsuario && rutasUsuario.length > 0" class="container">
   <h2 class="mb-4 title">Rutas Registradas</h2>
   <div class="row">
     <div *ngFor="let ruta of rutasUsuario" class="col-md-6 col-lg-4 mb-4">
       <div class="card ruta-card h-100">
+
         <div class="card-header">
-          <input [(ngModel)]="ruta.nombreRuta" [disabled]="!editando" [class.texto-plano]="!editando" class=" fs-5" />
+          <input [(ngModel)]="ruta.nombreRuta" [disabled]="!ruta.enEdicion" [class.texto-plano]="!ruta.enEdicion"
+            class=" fs-5" />
         </div>
         <div class="card-body">
           <div class="mb-2">
@@ -32,23 +25,25 @@
 
           <div class="mb-2">
             Localidad: <br>
-            <input type="text" [(ngModel)]="ruta.localidadRuta" [disabled]="!editando"
-              [class.texto-plano]="!editando" />
+            <input type="text" [(ngModel)]="ruta.localidadRuta" [disabled]="!ruta.enEdicion"
+              [class.texto-plano]="!ruta.enEdicion" />
           </div>
 
           <div class="mb-2">
             Kilómetros: <br>
-            <input [(ngModel)]="ruta.kilometrosRuta" [disabled]="!editando" [class.texto-plano]="!editando" />
+            <input [(ngModel)]="ruta.kilometrosRuta" [disabled]="!ruta.enEdicion"
+              [class.texto-plano]="!ruta.enEdicion" />
           </div>
 
           <div class="mb-2">
             Fecha:
-            <input type="date" [(ngModel)]="ruta.fechaRuta" [disabled]="!editando" [class.texto-plano]="!editando" />
+            <input type="date" [(ngModel)]="ruta.fechaRuta" [disabled]="!ruta.enEdicion"
+              [class.texto-plano]="!ruta.enEdicion" />
           </div>
 
           <div class="mb-2">
             Categoría:
-            <ng-container *ngIf="editando; else textoCategoria">
+            <ng-container *ngIf="ruta.enEdicion; else textoCategoria">
               <mat-form-field appearance="fill" class="w-100">
                 <mat-select [(ngModel)]="ruta.idCategoriaRuta.idCategoria">
                   <mat-option *ngFor="let categoria of categorias" [value]="categoria.idCategoria">
@@ -60,22 +55,46 @@
             <ng-template #textoCategoria>
               <div class="form-control-plaintext">{{ ruta.idCategoriaRuta.nombreCategoria }}</div>
             </ng-template>
+            <button *ngIf="ruta.enEdicion" class="btn btn-guardar" (click)="guardarCambios(ruta)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-floppy"
+                viewBox="0 0 16 16">
+                <path d="M11 2H9v3h2z" />
+                <path
+                  d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
+              </svg>
+              Guardar
+            </button>
+            <button *ngIf="ruta.enEdicion" class="btn btn-salir-edicion" (click)="this.obtenerRutasUsuario()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-circle"
+                viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path
+                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+              </svg>
+              Cancelar
+            </button>
           </div>
         </div>
 
         <div class="card-footer d-flex justify-content-between">
-          <svg (click)="editarElemento()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-            class="bi bi-pencil-square" viewBox="0 0 16 16">
-            <path
-              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-            <path fill-rule="evenodd"
-              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-          </svg>
-          <svg (click)="eliminarElemento(ruta)" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
-            <path
-              d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
-          </svg>
+          <button class="btn btn-guardar" (click)="editarElemento(ruta)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+              class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path
+                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+              <path fill-rule="evenodd"
+                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+            </svg>
+            Editar
+          </button>
+          <button class="btn btn-salir-edicion" (click)="eliminarElemento(ruta)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3"
+              viewBox="0 0 16 16">
+              <path
+                d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+            </svg>
+            Eliminar
+          </button>
         </div>
       </div>
     </div>

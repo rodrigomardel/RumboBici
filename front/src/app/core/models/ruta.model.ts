@@ -7,4 +7,6 @@ export class Ruta {
     kilometrosRuta: number = 0;
     fechaRuta: Date = new Date();
     idCategoriaRuta: Categoria = new Categoria();
+    /** Control adicional para la edición de cada ruta de forma individual */
+    enEdicion: boolean | undefined;
 }

@@ -129,20 +129,21 @@ main {
   }
 }
 
+.btn-salir-edicion {
+  border-color: $color-rojo ;
+  color: $color-rojo ;
+
+  &:hover {
+    color: $color-text-white !important;
+    background-color: $color-rojo !important;
+  }
+}
+
+
 .ctn-nueva-ruta {
   display: flex;
   margin: 40px 40px;
   justify-content: end;
-}
-
-.bi-pencil-square {
-  color: $color-azul;
-  cursor: pointer;
-}
-
-.bi-trash3 {
-  color: red;
-  cursor: pointer;
 }
 
 /* CONTAINERS

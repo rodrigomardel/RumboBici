@@ -24,20 +24,15 @@ export class RutasComponent {
   idSessionUser: number | null = localStorage.getItem('idUsuario') !== null
     ? Number(localStorage.getItem('idUsuario'))
     : null;
-  /** Control de la edición */
-  editando: boolean = false;
   /** Categorias recibidas */
   categorias: Categoria[] = [];
+
 
   constructor(private usuarioRutaService: UsuarioRutaService, private dialog: MatDialog, private rutaService: RutaService, private categoriaService: CategoriaService, private snackBar: MatSnackBar,) { }
 
   /**
-   * Método que se ejecuta al inicializar el componente.
    * Realiza una llamada al servicio para obtener la lista de categorías disponibles.
-   * Si la llamada es exitosa, asigna los datos. Si ocurre un error, 
-   * muestra un mensaje de error en la consola y en la interfaz de usuario.
-   * 
-   * @returns {void} No retorna ningún valor.
+   * Si la llamada es exitosa, asigna los datos. Si ocurre un error, muestra un mensaje de error en la consola.
    */
   ngOnInit(): void {
     if (this.idSessionUser !== null) {
@@ -48,14 +43,13 @@ export class RutasComponent {
     }
   }
 
-  /**
-   * Método para obtener las rutas del usuario desde el backend.
-   */
   obtenerRutasUsuario(): void {
     if (this.idSessionUser !== null) {
       this.usuarioRutaService.obtenerRutaUsuario(this.idSessionUser).subscribe({
         next: (data: UsuarioRuta[]) => {
-          this.rutasUsuario = data.map(item => item.ruta);
+          this.rutasUsuario = data.map(item => ({
+            ...item.ruta, enEdicion: false
+          }));
         },
         error: (error) => {
           console.error('Error al obtener las rutas:', error);
@@ -66,9 +60,6 @@ export class RutasComponent {
     }
   }
 
-  /**
-   * Abre una ventana modal que permite agregar una nueva ruta.
-   */
   abrirModalNuevaRuta(): void {
     const dialogRef = this.dialog.open(ModalRutaComponent, {
       panelClass: 'custom-modal-panel',
@@ -86,17 +77,11 @@ export class RutasComponent {
     });
   }
 
-
-  /**
-   * Cambia el estado a edición
-   */
-  editarElemento() {
-    this.editando = true;
+  editarElemento(ruta: Ruta): void {
+    // this.rutasUsuario.forEach(rutaNoEditable => rutaNoEditable.enEdicion = false);
+    ruta.enEdicion = true;
   }
 
-  /**
-   * Carga las categorías correspondientes
-   */
   cargarCategorias(): void {
     this.categoriaService.obtenerCategorias().subscribe({
       next: (data) => {
@@ -108,37 +93,27 @@ export class RutasComponent {
     });
   }
 
-  /**
-   * Guarda los cambios realizados en las rutas editadas.
-   */
-  guardarCambios(): void {
-    this.rutasUsuario.forEach(ruta => {
-      this.rutaService.actualizarRuta(ruta.idRuta, ruta).subscribe({
-        next: () => {
-          this.snackBar.open('Cambios realizados correctamente', 'Cerrar', {
-            duration: 30000,
-            verticalPosition: 'top',
-            horizontalPosition: 'center',
-          });
-          this.editando = false;
-          this.obtenerRutasUsuario();
-        },
-        error: (error) => {
-          this.snackBar.open('Error al realizar los cambios', 'Cerrar', {
-            duration: 10000,
-            verticalPosition: 'top',
-            horizontalPosition: 'center',
-          });
-        }
-      });
+  guardarCambios(ruta: Ruta): void {
+    this.rutaService.actualizarRuta(ruta.idRuta, ruta).subscribe({
+      next: () => {
+        this.snackBar.open('Cambios realizados correctamente', 'Cerrar', {
+          duration: 30000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center',
+        });
+        ruta.enEdicion = false;
+        this.obtenerRutasUsuario();
+      },
+      error: (error) => {
+        this.snackBar.open('Error al realizar los cambios', 'Cerrar', {
+          duration: 10000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center',
+        });
+      }
     });
   }
 
-  /**
-   * Elimina la ruta seleccionada
-   * 
-   * @param ruta ruta correspondiente 
-   */
   eliminarElemento(ruta: Ruta): void {
     const dialogRef = this.dialog.open(ModalConfirmacionComponent, {
       panelClass: 'custom-modal-panel',

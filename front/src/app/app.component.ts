@@ -2,6 +2,8 @@ import { Component, HostListener, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { ModalConfirmacionComponent } from './core/modal-confirmacion/modal-confirmacion.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +35,7 @@ export class AppComponent {
     this.showScrollButton = window.pageYOffset > 300;
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dialog: MatDialog) { }
 
   /**
    * Al inicializar, suscribe al evento `NavigationEnd` para detectar cambios en la ruta
@@ -75,7 +77,19 @@ export class AppComponent {
    * y redirigiendo a la página principal.
    */
   logout(): void {
-    this.router.navigate(['/home']);
-    localStorage.removeItem('idUsuario');
+    const dialogRef = this.dialog.open(ModalConfirmacionComponent, {
+      panelClass: 'custom-modal-panel',
+      data: {
+        titulo: 'Confirmación Cierre de Sesión',
+        mensaje: '¿Estás seguro de que deseas salir?'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((resultado: boolean) => {
+      if (resultado) {
+        this.router.navigate(['/home']);
+        localStorage.removeItem('idUsuario');
+      }
+    });
   }
 }
