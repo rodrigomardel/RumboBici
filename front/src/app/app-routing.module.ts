@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'rutas', component: RutasComponent },
   { path: 'categorias', component: CategoriasComponent },
   { path: 'categorias/rutas/:idCategoria', component: CategoriasRutasComponent },
-  { path: '', redirectTo: 'categorias', pathMatch: 'full' },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' },
 ];

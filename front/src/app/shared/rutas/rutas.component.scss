@@ -24,3 +24,10 @@ input {
     width: auto;
     pointer-events: none;
 }
+
+button.btn-nuevo {
+    font-size: 1.2rem !important;
+    font-style: bold !important;
+    border: 2px solid;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}

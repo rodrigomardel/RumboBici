@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   errorMsg: String | null = '';
 
   /**
-   * Constructor del componente. Inicializa el formulario reactivo (tipo de formulario en el que la lógica de validación y estado del formulario 
+   * Inicializa el formulario reactivo (tipo de formulario en el que la lógica de validación y estado del formulario 
    * se maneja en el componente) con los campos requeridos y sus validadores.
    * 
    * @param fb Constructor de formularios reactivos
@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
   }
 
   /**
-   * Se ejecuta al inicializar el componente.
    * Redirige al perfil si el usuario ya ha iniciado sesión anteriormente.
    */
   ngOnInit(): void {
@@ -62,7 +61,6 @@ export class LoginComponent implements OnInit {
   }
 
   /**
-   * Método que se ejecuta al enviar el formulario de login.
    * Envía las credenciales al backend y gestiona la respuesta.
    */
   login() {

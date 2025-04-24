@@ -23,8 +23,7 @@ export class PerfilComponent implements OnInit {
    * Si existe un nombre de usuario, realiza una solicitud para obtener los datos.
    */
   ngOnInit(): void {
-    let idUsuario: any = '';
-    idUsuario = localStorage.getItem('idUsuario')?.toString();
+    let idUsuario: any = localStorage.getItem('idUsuario')?.toString();
 
     if (idUsuario) {
       this.authUserLoginService.obtenerPerfil(idUsuario).subscribe({

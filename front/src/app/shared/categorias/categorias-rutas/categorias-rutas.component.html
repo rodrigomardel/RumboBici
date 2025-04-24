@@ -10,7 +10,7 @@
                     <p><strong>ID:</strong> {{ usuarioRuta.ruta.idRuta }}</p>
                     <p><strong>Localidad:</strong> {{ usuarioRuta.ruta.localidadRuta }}</p>
                     <p><strong>Kilometros:</strong> {{ usuarioRuta.ruta.kilometrosRuta }}</p>
-                    <p><strong>Fecha:</strong> {{ usuarioRuta.ruta.fechaRuta }}</p>
+                    <p><strong>Fecha:</strong> {{ usuarioRuta.ruta.fechaRuta | date: 'dd/MM/yyyy' }} </p>
                     <p><strong>Categoria:</strong> {{ usuarioRuta.ruta.idCategoriaRuta.nombreCategoria }}</p>
                 </div>
             </div>

@@ -78,8 +78,11 @@ export class RutasComponent {
   }
 
   editarElemento(ruta: Ruta): void {
-    // this.rutasUsuario.forEach(rutaNoEditable => rutaNoEditable.enEdicion = false);
     ruta.enEdicion = true;
+  }
+
+  cancelarEdicion(ruta: Ruta) {
+    ruta.enEdicion = false;
   }
 
   cargarCategorias(): void {
@@ -102,7 +105,6 @@ export class RutasComponent {
           horizontalPosition: 'center',
         });
         ruta.enEdicion = false;
-        this.obtenerRutasUsuario();
       },
       error: (error) => {
         this.snackBar.open('Error al realizar los cambios', 'Cerrar', {

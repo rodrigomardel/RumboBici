@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Ruta } from '../../../core/models/ruta.model';
 import { UsuarioRuta } from '../../../core/models/usuario-ruta.model';
 import { UsuarioRutaService } from '../../../core/services/usuario-ruta.service';
 
