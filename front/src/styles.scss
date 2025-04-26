@@ -81,8 +81,9 @@ main {
 
 .ctn-home-explora {
   background-image: url("/img/web/main-index/map-location.png");
-  background-size: auto;
-  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  // height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -92,8 +93,21 @@ main {
 
 .ctn-home-categorias {
   background-image: url("/img/web/main-index/categorias-index.png");
-  background-size: auto;
-  height: 400px; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  padding: 2rem; 
+  color: black; 
+}
+
+.ctn-home-historial{
+  background-image: url("/img/web/main-index/historial-main.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  // height: 480px; 
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -355,7 +369,12 @@ mat-card-content {
 }
 
 .categoria-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.ruta-card:hover{
+  transform: scale(1.02);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 

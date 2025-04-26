@@ -12,11 +12,12 @@ import { Usuario } from '../models/usuario.model';
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.scss'
 })
+
 export class PerfilComponent implements OnInit {
+  /** Modelo para acceder a los datos del usuario */
   usuario: Usuario = new Usuario();
 
   constructor(private authUserLoginService: AuthUserLoginService) { }
-
 
   /**
    * Al inicializar, obtiene los datos del usuario logueado desde `localStorage`.

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from '../models/usuario.model';
 import { AuthUserLoginService } from '../services/auth-user-login.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalConfirmacionComponent } from '../modal-confirmacion/modal-confirmacion.component';
 
 /**
  * Componente encargado del formulario de inicio de sesión.
@@ -14,6 +16,7 @@ import { AuthUserLoginService } from '../services/auth-user-login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
+
 export class LoginComponent implements OnInit {
   /** Formulario reactivo de login */
   loginForm: FormGroup;
@@ -30,11 +33,7 @@ export class LoginComponent implements OnInit {
    * @param router Servicio de enrutamiento para navegación
    * @param authUserLoginService Servicio de autenticación
    */
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private authUserLoginService: AuthUserLoginService
-  ) {
+  constructor( private fb: FormBuilder, private router: Router, private authUserLoginService: AuthUserLoginService, private dialog: MatDialog) {
     this.loginForm = this.fb.group({
       nombreUsuario: [this.usuario.nombreUsuario, [
         Validators.required,
@@ -61,9 +60,9 @@ export class LoginComponent implements OnInit {
   }
 
   /**
-   * Envía las credenciales al backend y gestiona la respuesta.
+   * Envía las credenciales al servicio y gestiona la respuesta.
    */
-  login() {
+  login(): void {
     const request = {
       idUsuario: this.usuario.idUsuario,
       nombreUsuario: this.usuario.nombreUsuario,
@@ -77,24 +76,21 @@ export class LoginComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error de login', error);
-        alert('** Credenciales incorrectas - Intentelo de nuevo **');
+        const dialogRef = this.dialog.open(ModalConfirmacionComponent, {
+          panelClass: 'custom-modal-panel',
+          data: {
+            titulo: 'Credenciales incorrectas ',
+            mensaje: 'Intentelo de nuevo',
+            tituloColor: 'red'
+          }
+        });
+    
+        dialogRef.afterClosed().subscribe((resultado: boolean) => {
+          if (resultado) {
+            this.router.navigate(['/login']);
+          }
+        });
       },
     });
-  }
-
-  /**
-   * Getter para facilitar el acceso a los controles del formulario desde la plantilla.
-   */
-  get usuarioFormulario() {
-    return this.loginForm.controls;
-  }
-
-  /**
-   * Método para verificar si un campo ha sido tocado y es inválido
-   * Se usa para mostrar mensajes de error solo si el usuario ha tocado el campo
-   */
-  isFieldInvalid(field: string): boolean {
-    const control = this.loginForm.get(field);
-    return !!(control && control.invalid && (control.touched || control.dirty));
   }
 }

@@ -7,19 +7,25 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   templateUrl: './modal-confirmacion.component.html',
   styleUrl: './modal-confirmacion.component.scss'
 })
-export class ModalConfirmacionComponent {
 
+export class ModalConfirmacionComponent {
   /** Título de la modal */
   titulo: string;
   /** Mensaje a mostrar */
   mensaje: string;
+  /** Color del título */
+  tituloColor: string;
 
-  constructor(
-    private dialogRef: MatDialogRef<ModalConfirmacionComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
+  /**
+   * Inicializa el componente de una ventana model de confirmación usando el material MatDialogRef
+   * 
+   * @param dialogRef referencia a la modal y su comportamiento
+   * @param data datos que se van a inyectar en la modal
+   */
+  constructor(private dialogRef: MatDialogRef<ModalConfirmacionComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.titulo = data.titulo;
     this.mensaje = data.mensaje;
+    this.tituloColor = data.tituloColor; 
   }
 
   /**

@@ -16,12 +16,7 @@ export class UsuariosComponent implements OnInit {
   constructor(private authUserLoginService: AuthUserLoginService) { }
 
   /**
-   * Método que se ejecuta al inicializar el componente.
-   * Realiza una llamada al servicio para obtener la lista de usuarios disponibles.
-   * Si la llamada es exitosa, asigna los datos. Si ocurre un error, 
-   * muestra un mensaje de error en la consola y en la interfaz de usuario.
-   * 
-   * @returns {void} No retorna ningún valor.
+   * Obtiene la lista de usuarios disponibles.
    */
   ngOnInit(): void {
     this.authUserLoginService.obtenerUsuarios().subscribe({

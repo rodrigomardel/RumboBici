@@ -61,7 +61,6 @@ export class AppComponent {
 
   /**
   * Actualiza la visibilidad de los botones según la ruta actual.
-  * 
   * @param ruta Ruta actual de la aplicación.
   */
   actualizarBotones(ruta: string): void {

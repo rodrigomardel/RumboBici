@@ -28,12 +28,12 @@ export class RutasComponent {
   categorias: Categoria[] = [];
   /** Color del contenedor de la ruta en función de su categoría */
   coloresCategoria: { [key: number]: string } = {
-    1: 'rgba(21, 236, 2, 0.10)',
-    2: 'rgba(255, 49, 193, 0.10)',
-    3: 'rgba(255, 224, 49, 0.15)',
-    4: 'rgba(160, 149, 156, 0.15)',
-    5: 'rgba(108, 202, 233, 0.16)',
-    6: 'rgba(69, 57, 230, 0.15)',
+    1: 'rgba(45, 250, 26, 0.23)',
+    2: 'rgba(255, 49, 193, 0.20)',
+    3: 'rgba(255, 217, 0, 0.25)',
+    4: 'rgba(255, 115, 0, 0.36)',
+    5: 'rgba(27, 198, 255, 0.30)',
+    6: 'rgba(15, 0, 218, 0.18)',
   };
 
 
@@ -41,8 +41,7 @@ export class RutasComponent {
   constructor(private usuarioRutaService: UsuarioRutaService, private dialog: MatDialog, private rutaService: RutaService, private categoriaService: CategoriaService, private snackBar: MatSnackBar,) { }
 
   /**
-   * Realiza una llamada al servicio para obtener la lista de categorías disponibles.
-   * Si la llamada es exitosa, asigna los datos. Si ocurre un error, muestra un mensaje de error en la consola.
+   * Obtiene la lista de categorías y rutas de usuario disponibles.
    */
   ngOnInit(): void {
     if (this.idSessionUser !== null) {
@@ -53,6 +52,9 @@ export class RutasComponent {
     }
   }
 
+  /**
+   * Obtiene las rutas correspondientes al usuario
+   */
   obtenerRutasUsuario(): void {
     if (this.idSessionUser !== null) {
       this.usuarioRutaService.obtenerRutaUsuario(this.idSessionUser).subscribe({
@@ -70,6 +72,9 @@ export class RutasComponent {
     }
   }
 
+  /**
+   * Abre una ventana modal para crear una nueva ruta.
+   */
   abrirModalNuevaRuta(): void {
     const dialogRef = this.dialog.open(ModalRutaComponent, {
       panelClass: 'custom-modal-panel',
@@ -87,14 +92,25 @@ export class RutasComponent {
     });
   }
 
+  /**
+   * Modifica el estado de la ruta para su edición
+   * @param ruta ruta correspondiente
+   */
   editarElemento(ruta: Ruta): void {
     ruta.enEdicion = true;
   }
 
+  /**
+   * Cancela el estado de edición de la ruta
+   * @param ruta ruta correspondiente
+   */
   cancelarEdicion(ruta: Ruta) {
     ruta.enEdicion = false;
   }
 
+  /**
+   * Carga todas las categorías.
+   */
   cargarCategorias(): void {
     this.categoriaService.obtenerCategorias().subscribe({
       next: (data) => {
@@ -106,6 +122,10 @@ export class RutasComponent {
     });
   }
 
+  /**
+   * Guarda los cambios realizados de la ruta en edición.
+   * @param ruta ruta correspondiente
+   */
   guardarCambios(ruta: Ruta): void {
     this.rutaService.actualizarRuta(ruta.idRuta, ruta).subscribe({
       next: () => {
@@ -127,6 +147,10 @@ export class RutasComponent {
     });
   }
 
+  /**
+   * Elimina la ruta seleccionada.
+   * @param ruta ruta correspondiente
+   */
   eliminarElemento(ruta: Ruta): void {
     const dialogRef = this.dialog.open(ModalConfirmacionComponent, {
       panelClass: 'custom-modal-panel',
@@ -161,6 +185,11 @@ export class RutasComponent {
     });
   }
 
+  /**
+   * Asigna a cada ruta el color correspondiente a su categoría
+   * @param idCategoria ID de la categoría correspondiente
+   * @returns color correspondiente o blanco en caso contrario
+   */
   obtenerColorFondo(idCategoria: number): string {
     return this.coloresCategoria[idCategoria] || '#ffffff';
   }

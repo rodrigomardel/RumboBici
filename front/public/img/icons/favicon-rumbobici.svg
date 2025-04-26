@@ -7,7 +7,7 @@
    viewBox="0 0 8.4666664 8.4666666"
    version="1.1"
    id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    sodipodi:docname="favicon-rumbobici.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,10 +24,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="16"
-     inkscape:cx="12"
+     inkscape:cx="12.03125"
      inkscape:cy="12.65625"
      inkscape:window-width="1920"
-     inkscape:window-height="1009"
+     inkscape:window-height="1017"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -128,34 +128,34 @@
     <g
        id="g1"
        transform="translate(-0.01136826,-0.12762852)">
+      <path
+         fill-rule="nonzero"
+         fill="#231f20"
+         fill-opacity="1"
+         d="M 5.7190334,3.2295807 2.4172216,4.929061 c 0.8162515,0 1.4780571,0.6170476 1.4780571,1.3773383 L 5.7190334,3.2295807"
+         id="path1000-8"
+         style="display:inline;mix-blend-mode:luminosity;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0461911;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         fill-rule="nonzero"
+         fill="#36ac9c"
+         fill-opacity="1"
+         d="m 4.7461709,1.0078827 c 1.5422889,0.4778333 2.6548006,1.832644 2.6548006,3.4305711 0,1.5965837 -1.1125117,2.9517209 -2.6548006,3.4295536 C 6.6052887,7.6844082 8.053756,6.2193082 8.053756,4.4384538 c 0,-1.7811917 -1.4484673,-3.2473077 -3.3075851,-3.4305711"
+         id="path1001-2"
+         style="display:inline;mix-blend-mode:luminosity;fill:#00c5cc;fill-opacity:1;stroke:#000000;stroke-width:0.0451101;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         fill-rule="nonzero"
+         fill="#24255d"
+         fill-opacity="1"
+         d="m 1.1701121,4.4384538 c 0,-1.7785055 1.2229324,-3.2903494 2.9272444,-3.84551987 C 1.9322347,0.71533619 0.21673684,2.3895945 0.21673684,4.4384538 c 0,2.0478425 1.71549786,3.7221088 3.88061966,3.8451744 C 2.3930445,7.7274498 1.1701121,6.2159424 1.1701121,4.4384538"
+         id="path1002-4"
+         style="display:inline;mix-blend-mode:luminosity;fill:#e00097;fill-opacity:1;stroke:#000000;stroke-width:0.0451101;stroke-dasharray:none;stroke-opacity:1" />
       <ellipse
-         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.213454;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:none;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.213454;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          id="path1"
          cx="4.2281651"
          cy="4.3774981"
          rx="4.0121326"
          ry="4.0782781" />
-      <path
-         fill-rule="nonzero"
-         fill="#231f20"
-         fill-opacity="1"
-         d="M 5.7821897,3.0972726 2.5368823,4.7264835 c 0.8022827,0 1.4527625,0.591534 1.4527625,1.3203884 L 5.7821897,3.0972726"
-         id="path1000"
-         style="fill:#a68d00;fill-opacity:1;stroke:#000000;stroke-width:0.093232;stroke-dasharray:none;stroke-opacity:1" />
-      <path
-         fill-rule="nonzero"
-         fill="#36ac9c"
-         fill-opacity="1"
-         d="m 4.3721199,1.119314 c 1.515895,0.4580759 2.6093687,1.7568679 2.6093687,3.2887249 0,1.5305697 -1.0934737,2.8296753 -2.6093687,3.287751 1.8273029,-0.176008 3.2509823,-1.5805299 3.2509823,-3.2877511 0,-1.7075429 -1.4236794,-3.1130387 -3.2509823,-3.2887248"
-         id="path1001"
-         style="fill:#00a0a6;fill-opacity:1;stroke:#000000;stroke-width:0.093232;stroke-dasharray:none;stroke-opacity:1" />
-      <path
-         fill-rule="nonzero"
-         fill="#24255d"
-         fill-opacity="1"
-         d="m 1.6710692,4.3776633 c 0,-1.7049681 1.2020049,-3.1543009 2.8771509,-3.68651658 C 2.4201499,0.80848799 0.73400933,2.4135194 0.73400933,4.3776633 c 0,1.9631703 1.68614057,3.5682097 3.81421077,3.6861866 C 2.8730741,7.5306686 1.6710692,6.0816577 1.6710692,4.3776633"
-         id="path1002"
-         style="fill:#a6006f;fill-opacity:1;stroke:#000000;stroke-width:0.093232;stroke-dasharray:none;stroke-opacity:1" />
     </g>
   </g>
 </svg>

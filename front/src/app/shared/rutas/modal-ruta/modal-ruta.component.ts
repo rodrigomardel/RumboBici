@@ -18,8 +18,21 @@ export class ModalRutaComponent implements OnInit {
   /** Categorias recibidas */
   categorias: Categoria[] = [];
 
+  /**
+   * Inicia una ventana modal para la creación de una nueva ruta.
+   * 
+   * @param fb Constructor de formularios reactivos
+   * @param dialogRef referencia a la modal y su comportamiento
+   * @param categoriaService datos de la categorías
+   * @param rutaService datos de la ruta
+   * @param usuarioRutaService datos de la relación usuario_ruta
+   */
   constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<ModalRutaComponent>, private categoriaService: CategoriaService, private rutaService: RutaService, private usuarioRutaService: UsuarioRutaService) { }
 
+  /**
+   * Inicializa el formulario reactivo (tipo de formulario en el que la lógica de validación y estado del formulario 
+   * se maneja en el componente) con los campos requeridos y sus validadores.
+   */
   ngOnInit(): void {
     this.rutaForm = this.fb.group({
       nombreRuta: ['', Validators.required],
@@ -31,6 +44,9 @@ export class ModalRutaComponent implements OnInit {
     this.cargarCategorias();
   }
 
+  /**
+   * Obtiene las categorías para mostrar en el select.
+   */
   cargarCategorias(): void {
     this.categoriaService.obtenerCategorias().subscribe({
       next: (data) => {
@@ -42,6 +58,9 @@ export class ModalRutaComponent implements OnInit {
     });
   }
 
+  /**
+   * Guarda la ruta y la relación correspondiente entre la misma y el usuario con la sesion activa.
+   */
   guardarRuta(): void {
     if (this.rutaForm.valid) {
       const formValue = this.rutaForm.value;
@@ -86,8 +105,9 @@ export class ModalRutaComponent implements OnInit {
     }
   }
 
-
-
+  /**
+   * Cancelar la creación de la ruta.
+   */
   cancelar(): void {
     this.dialogRef.close();
   }

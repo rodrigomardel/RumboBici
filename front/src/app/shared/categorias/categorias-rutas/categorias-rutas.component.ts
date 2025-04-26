@@ -16,13 +16,14 @@ export class CategoriasRutasComponent implements OnInit {
   idCategoria!: number;
   /** Lista de la relación usuario-rutas correspondientes que se van a mostrar */
   relacionRutasUsuario: UsuarioRuta[] = [];
-  /** ID del usuario de la sesión correspondiente */
-  idSessionUser: number | null = localStorage.getItem('idUsuario') !== null
-    ? Number(localStorage.getItem('idUsuario'))
-    : null;
+  /** ID del usuario de la sesión correspondiente transformado a Number para obtener sus rutas de la tabla usuario_ruta  */
+  idSessionUser: number | null = localStorage.getItem('idUsuario') !== null ? Number(localStorage.getItem('idUsuario')) : null;
 
   constructor(private route: ActivatedRoute, private usuarioRutaService: UsuarioRutaService) { }
 
+  /**
+   * Obtiene las rutas del usuario correspondiente.
+   */
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.idCategoria = Number(params.get('idCategoria'));

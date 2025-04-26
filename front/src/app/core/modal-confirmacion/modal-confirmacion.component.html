@@ -1,5 +1,5 @@
 <div class="ctn-modal-confirmacion">
-    <h3 class="text-center mt-4">{{ titulo }}</h3>
+    <h3 [ngStyle]="{ color: data.tituloColor }" class="text-center mt-4">{{ titulo }}</h3>
     <div class="container">
         <p class="text-center">{{ mensaje }}</p>
         <div class="d-flex justify-content-center gap-4 mt-5">

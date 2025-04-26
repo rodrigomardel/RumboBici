@@ -27,9 +27,9 @@ export class CategoriaService {
 
 
   /**
-   * Obtiene todas las categorías desde el backend
+   * Obtiene todas las categorías desde el backend.
    * 
-   * @return Observable con la lista de categorías
+   * @return Observable con la lista de categorías.
    */
   obtenerCategorias(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(`${API_URL}ruta/categorias`);
