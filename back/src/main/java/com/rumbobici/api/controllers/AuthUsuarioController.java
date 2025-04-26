@@ -22,11 +22,7 @@ import com.rumbobici.api.services.UsuarioAuthService;
 import com.rumbobici.api.services.UsuarioRutaService;
 
 /**
- * Controlador REST encargado de gestionar la autenticación de usuarios
- * y la obtención de sus datos de perfil.
- * 
- * Los endpoints expuestos están bajo el path "/auth" y aceptan solicitudes
- * desde cualquier origen (CORS habilitado).
+ * Gestiona la autenticación de usuarios y la obtención de sus datos de perfil.
  */
 @RestController
 @RequestMapping("/auth")
@@ -40,13 +36,11 @@ public class AuthUsuarioController {
     private UsuarioRutaService usuarioRutaService;
 
     /**
-     * Endpoint para autenticar a un usuario con sus credenciales.
+     * Autentica a un usuario con sus credenciales.
      * 
      * @param request Objeto que contiene el nombre de usuario y la contraseña.
-     * @return Un DTO con los datos de respuesta tras la autenticación (idUsuario,
-     *         nombreUsuario y contraseña).
-     * @throws Exception Mensaje correspondiente si ocurre un error durante el
-     *                   proceso de autenticación.
+     * @return DTO con los datos de respuesta tras la autenticación (idUsuario, nombreUsuario y contraseña).
+     * @throws Exception Mensaje correspondiente si ocurre un error durante el proceso de autenticación.
      */
     @PostMapping("/login")
     public UsuarioAuthResponseDto login(@RequestBody UsuarioAuthRequestDto request) throws Exception {
@@ -54,14 +48,11 @@ public class AuthUsuarioController {
     }
 
     /**
-     * Endpoint para obtener los datos del perfil de un usuario registrado.
+     * Obtiene los datos del perfil de un usuario registrado.
      * 
-     * @param nombreUsuario Nombre del usuario correspondiente para obtener la
-     *                      información del perfil.
-     * @return Un DTO con los datos del perfil del usuario (idUsuario,
-     *         nombreUsuario, contraseña, correo y fecha de nacimiento).
-     * @throws Exception Mensaje correspondiente si ocurre un error al obtener los
-     *                   datos.
+     * @param nombreUsuario Nombre del usuario correspondiente para obtener la información del perfil.
+     * @return DTO con los datos del perfil del usuario (idUsuario, nombreUsuario, contraseña, correo y fecha de nacimiento).
+     * @throws Exception Mensaje correspondiente si ocurre un error al obtener los datos.
      */
     @GetMapping("/perfil")
     public UsuarioDatosPerfilDto obtenerPerfil(@RequestParam Long idUsuario) throws Exception {
@@ -78,10 +69,7 @@ public class AuthUsuarioController {
     }
 
     /**
-     * Endpoint para obtener todos los usuarios registrados en el sistema.
-     * Este método utiliza el servicio `UsuarioAuthService` para recuperar la lista
-     * completa
-     * de usuarios desde la base de datos.
+     * Obtiene todos los usuarios registrados en el sistema.
      * 
      * @return Lista con todos los usuarios registrados.
      */
@@ -91,7 +79,7 @@ public class AuthUsuarioController {
     }
 
     /**
-     * Obtener las rutas realizadas por un usuario específico.
+     * Obtiene las rutas realizadas por un usuario específico.
      * 
      * @param idUsuario el ID del usuario.
      * @return una lista de rutas realizadas por el usuario.

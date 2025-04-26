@@ -10,9 +10,6 @@ import org.springframework.stereotype.Repository;
 
 /**
  * Repositorio de acceso a datos para la entidad {@link UsuarioModel}.
- * 
- * Esta interfaz extiende {@link JpaRepository}, lo que proporciona métodos CRUD
- * predeterminados y permite definir consultas personalizadas.
  */
 @Repository
 public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long> {
@@ -21,9 +18,7 @@ public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long> {
    * Busca un usuario por su ID de usuario.
    * 
    * @param idUsuario ID del usuario a buscar.
-   * @return Un {@link Optional} que contiene el {@link UsuarioModel} si fue
-   *         encontrado, o vacío si no existe.
-   * 
+   * @return Un {@link Optional} que contiene el {@link UsuarioModel} si fue encontrado, o vacío si no existe.
    */
   Optional<UsuarioModel> findByIdUsuario(Long idUsuario);
 
@@ -31,9 +26,7 @@ public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long> {
    * Busca un usuario por su nombre de usuario.
    * 
    * @param nombreUsuario Nombre de usuario a buscar.
-   * @return Un {@link Optional} que contiene el {@link UsuarioModel} si fue
-   *         encontrado, o vacío si no existe.
-   * 
+   * @return Un {@link Optional} que contiene el {@link UsuarioModel} si fue encontrado, o vacío si no existe.
    */
   Optional<UsuarioModel> findByNombreUsuario(String nombreUsuario);
 

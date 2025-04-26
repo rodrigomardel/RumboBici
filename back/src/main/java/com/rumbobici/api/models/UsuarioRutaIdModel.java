@@ -7,8 +7,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 /**
- * Clase que representa la clave primaria compuesta para la entidad
- * UsuarioRutaModel.
+ * Clase que representa la clave primaria compuesta para la entidad UsuarioRutaModel.
  * Combina el identificador del usuario y el identificador de la ruta.
  */
 @Embeddable
@@ -31,13 +30,13 @@ public class UsuarioRutaIdModel implements Serializable {
     public Long getIdUsuario() {
         return idUsuario;
     }
+   
+    public Long getIdRuta() {
+        return idRuta;
+    }
 
     public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
-    }
-
-    public Long getIdRuta() {
-        return idRuta;
     }
 
     public void setIdRuta(Long idRuta) {
@@ -45,16 +44,15 @@ public class UsuarioRutaIdModel implements Serializable {
     }
 
     /**
-     * Generado por JPA para comparar esta clave compuesta con otra para ver si son
-     * iguales.
+     * Generado por JPA para comparar esta clave compuesta con otra para ver si son iguales.
      */
     @Override
-    public boolean equals(Object o) {
-        if (this == o)
+    public boolean equals(Object obj) {
+        if (this == obj)
             return true;
-        if (!(o instanceof UsuarioRutaIdModel))
+        if (!(obj instanceof UsuarioRutaIdModel))
             return false;
-        UsuarioRutaIdModel that = (UsuarioRutaIdModel) o;
+        UsuarioRutaIdModel that = (UsuarioRutaIdModel) obj;
         return Objects.equals(idUsuario, that.idUsuario) &&
                 Objects.equals(idRuta, that.idRuta);
     }

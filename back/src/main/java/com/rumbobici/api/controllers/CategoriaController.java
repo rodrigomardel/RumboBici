@@ -14,11 +14,7 @@ import com.rumbobici.api.models.CategoriaModel;
 import com.rumbobici.api.services.CategoriaService;
 
 /**
- * Controlador REST encargado de gestionar la obtencion de los datos de las
- * categorias.
- * 
- * Los endpoints expuestos están bajo el path "/categoria" y aceptan solicitudes
- * desde cualquier origen (CORS habilitado).
+ * Gestiona la obtencion de los datos de las categorias.
  */
 @RestController
 @RequestMapping("/ruta")
@@ -29,14 +25,11 @@ public class CategoriaController {
     private CategoriaService categoriaService;
 
     /**
-     * Endpoint para obtener los datos de las categorías disponibles.
+     * Obtiene los datos de las categorías disponibles.
      * 
-     * @param nombreCategoria Nombre de la categoría correspondiente para obtener la
-     *                        información.
-     * @return Un DTO con los datos de la categoría (idCategoria, nombreCategoria y
-     *         UrlImagen)
-     * @throws Exception Mensaje correspondiente si ocurre un error al obtener los
-     *                   datos.
+     * @param nombreCategoria Nombre de la categoría correspondiente para obtener la información.
+     * @return DTO con los datos de la categoría (idCategoria, nombreCategoria y UrlImagen)
+     * @throws Exception Mensaje correspondiente si ocurre un error al obtener los datos.
      */
     @GetMapping("/categoria")
     public CategoriaDto obtenerCategoria(@RequestParam String nombreCategoria) throws Exception {
@@ -51,7 +44,7 @@ public class CategoriaController {
     }
 
     /**
-     * Endpoint para obtener todas las categorías registradas en el sistema.
+     * Obtiene todas las categorías registradas en el sistema.
      * 
      * @return Lista con todas las categorías registradas.
      */

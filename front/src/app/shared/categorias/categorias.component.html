@@ -5,9 +5,11 @@
             <a [routerLink]="['/categorias/rutas', categoria.idCategoria]" class="card-link">
                 <div class="card categoria-card">
                     <div class=" text-center">
-                        <h5 class="card-header">{{ categoria.nombreCategoria }}</h5>
+                        <h5 class="card-header"
+                            [ngStyle]="{ 'background-color': obtenerColorFondo(categoria.idCategoria) }">{{
+                            categoria.nombreCategoria }}</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" [ngStyle]="{ 'background-color': obtenerColorFondo(categoria.idCategoria) }">
                         <p><strong>ID:</strong> {{ categoria.idCategoria }}</p>
                         <img [src]="categoria.urlImagen" alt="Imagen de {{ categoria.nombreCategoria }}"
                             class="img-fluid categoria-img">

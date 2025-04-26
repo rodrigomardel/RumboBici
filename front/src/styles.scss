@@ -79,6 +79,29 @@ main {
   margin: 60px;
 }
 
+.ctn-home-explora {
+  background-image: url("/img/web/main-index/map-location.png");
+  background-size: auto;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  padding: 2rem; 
+  color: black; 
+}
+
+.ctn-home-categorias {
+  background-image: url("/img/web/main-index/categorias-index.png");
+  background-size: auto;
+  height: 400px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  padding: 2rem; 
+  color: black; 
+}
+
+
 /* BOTONES
 ---------------------------------------------------------*/
 .btn {
@@ -188,7 +211,7 @@ mat-card-title {
   text-align: center;
   margin-bottom: 3rem !important;
   margin-top: 2rem !important;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
 }
 
 mat-card {
@@ -203,7 +226,7 @@ mat-card {
 }
 
 h1 {
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
 }
 
 .title {
@@ -211,7 +234,7 @@ h1 {
   text-align: center;
   color: $color-magenta;
   padding: 1rem;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
 }
 
 mat-form-field {
@@ -313,8 +336,8 @@ mat-card-content {
   word-wrap: break-word;
 }
 
-.card-header {
-  background-color: $color-turquesa-transparente !important;
+.user {
+  background-color: $color-turquesa-transparente;
 }
 
 @media (max-width: 775px) {

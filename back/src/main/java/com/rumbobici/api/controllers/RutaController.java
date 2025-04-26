@@ -19,7 +19,7 @@ import com.rumbobici.api.models.RutaModel;
 import com.rumbobici.api.services.RutaService;
 
 /**
- * Controlador REST para la gestión de rutas de usuarios.
+ * Gestión de las rutas de usuarios.
  */
 @RestController
 @RequestMapping("/usuario-ruta")
@@ -53,7 +53,7 @@ public class RutaController {
     /**
      * Actualiza una ruta existente por su ID.
      *
-     * @param idRuta          ID de la ruta a actualizar
+     * @param idRuta ID de la ruta a actualizar
      * @param rutaActualizada Objeto con los nuevos datos de la ruta
      * @return ResponseEntity con la ruta actualizada o not found si no existe
      */

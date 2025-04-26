@@ -16,11 +16,9 @@ import jakarta.persistence.TemporalType;
 @Table(name = "usuario_ruta")
 public class UsuarioRutaModel {
 
-    /**
-     * Clave primaria compuesta por id_usuario e id_ruta.
-     */
+    // Clave primaria compuesta por id_usuario e id_ruta.
     @EmbeddedId
-    private UsuarioRutaIdModel id = new UsuarioRutaIdModel();
+    private UsuarioRutaIdModel id = new UsuarioRutaIdModel(); 
 
     @ManyToOne
     @MapsId("idUsuario")

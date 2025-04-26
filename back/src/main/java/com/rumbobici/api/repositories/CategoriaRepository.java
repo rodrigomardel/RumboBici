@@ -11,8 +11,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Repositorio de acceso a datos para la entidad {@link CategoriaModel}.
  * 
- * Esta interfaz extiende {@link JpaRepository}, lo que proporciona métodos CRUD
- * predeterminados y permite definir consultas personalizadas.
+ * Extiende {@link JpaRepository}, lo que proporciona métodos CRUD predeterminados y permite definir consultas personalizadas.
  */
 @Repository
 public interface CategoriaRepository extends JpaRepository<CategoriaModel, Long> {
@@ -21,9 +20,7 @@ public interface CategoriaRepository extends JpaRepository<CategoriaModel, Long>
    * Busca una categoria por su nombre.
    * 
    * @param nombreCategoria Nombre de la categoria a buscar.
-   * @return Un {@link Optional} que contiene el {@link CategoriaModel} si fue
-   *         encontrado, o vacío si no existe.
-   * 
+   * @return Un {@link Optional} que contiene el {@link CategoriaModel} si fue encontrado, o vacío si no existe.
    */
   Optional<CategoriaModel> findByNombreCategoria(String nombreCategoria);
 

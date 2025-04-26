@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import com.rumbobici.api.models.RutaModel;
 
+/**
+ * Repositorio de acceso a datos para la entidad {@link RutaModel}.
+ */
 @Repository
 public interface RutaRepository extends JpaRepository<RutaModel, Long> {
 

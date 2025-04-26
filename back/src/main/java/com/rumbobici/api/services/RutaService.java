@@ -9,9 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Servicio para la gestión de rutas.
- * Contiene la lógica de negocio para crear, actualizar, obtener y eliminar
- * rutas.
+ * Servicio para la gestión de rutas. Creación, actualización, consulta y borrado de rutas.
  */
 @Service
 public class RutaService {

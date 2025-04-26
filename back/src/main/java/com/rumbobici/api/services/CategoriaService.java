@@ -10,8 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Servicio encargado de la lógica y el acceso a los datos de las categorias en
- * la BBDD.
+ * Servicio encargado de la lógica y el acceso a los datos de las categorias.
  */
 @Service
 public class CategoriaService {
@@ -23,8 +22,7 @@ public class CategoriaService {
      * Obtiene los datos de una categoria por su nombre.
      *
      * @param nombreCategoria Nombre de categoria a buscar.
-     * @return Un {@link Optional} que contiene la categoria si fue encontrada, o
-     *         vacío en caso contrario.
+     * @return Un {@link Optional} que contiene la categoria si fue encontrada, vacío en caso contrario.
      * @throws Exception Si ocurre algún error durante la consulta.
      */
     public Optional<CategoriaModel> obtenerDatosCategoria(String nombreCategoria) throws Exception {

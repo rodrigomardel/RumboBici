@@ -12,8 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Servicio encargado de la lógica de autenticación de usuarios y de la
- * recuperación de sus datos desde la BBDD.
+ * Servicio encargado de la lógica de autenticación de usuarios y de la recuperación de sus datos.
  */
 @Service
 public class UsuarioAuthService {
@@ -25,10 +24,8 @@ public class UsuarioAuthService {
      * Autentica a un usuario verificando su nombre de usuario y contraseña.
      *
      * @param request Objeto que contiene las credenciales del usuario.
-     * @return Un DTO con información del usuario autenticado (idUsuario,
-     *         nombreUsuario y contraseña).
-     * @throws Exception Si el usuario no es encontrado o la contraseña es
-     *                   incorrecta.
+     * @return Un DTO con información del usuario autenticado (idUsuario, nombreUsuario y contraseña).
+     * @throws Exception Si el usuario no es encontrado o la contraseña es incorrecta.
      */
     public UsuarioAuthResponseDto login(UsuarioAuthRequestDto request) throws Exception {
         UsuarioModel user = usuarioRepository.findByNombreUsuario(request.getNombreUsuario())
@@ -45,8 +42,7 @@ public class UsuarioAuthService {
      * Obtiene los datos de un usuario por su nombre de usuario.
      *
      * @param nombreUsuario Nombre de usuario a buscar.
-     * @return Un {@link Optional} que contiene el usuario si fue encontrado, o
-     *         vacío en caso contrario.
+     * @return Un {@link Optional} que contiene el usuario si fue encontrado, o vacío en caso contrario.
      * @throws Exception Si ocurre algún error durante la consulta.
      */
     public Optional<UsuarioModel> obtenerDatosUsuario(String nombreUsuario) throws Exception {

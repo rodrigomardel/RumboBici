@@ -18,9 +18,6 @@ import jakarta.persistence.TemporalType;
 @Table(name = "usuario")
 public class UsuarioModel {
 
-    /**
-     * ID generado automáticamente por la base de datos (AUTO_INCREMENT)
-     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
@@ -35,16 +32,11 @@ public class UsuarioModel {
     @Column(name = "correo_electronico", nullable = false, unique = true, length = 100)
     private String correoElectronico;
 
-    /**
-     * Guarda la fecha con el formato
-     */
     @Column(name = "fecha_nacimiento", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
 
-    /**
-     * Lista de todas las rutas realizadas por un usuario.
-     */
+    // Lista de todas las rutas realizadas por un usuario.
     @OneToMany(mappedBy = "usuario")
     private List<UsuarioRutaModel> usuarioRutas = new ArrayList<>();
 

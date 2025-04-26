@@ -26,6 +26,16 @@ export class RutasComponent {
     : null;
   /** Categorias recibidas */
   categorias: Categoria[] = [];
+  /** Color del contenedor de la ruta en función de su categoría */
+  coloresCategoria: { [key: number]: string } = {
+    1: 'rgba(21, 236, 2, 0.10)',
+    2: 'rgba(255, 49, 193, 0.10)',
+    3: 'rgba(255, 224, 49, 0.15)',
+    4: 'rgba(160, 149, 156, 0.15)',
+    5: 'rgba(108, 202, 233, 0.16)',
+    6: 'rgba(69, 57, 230, 0.15)',
+  };
+
 
 
   constructor(private usuarioRutaService: UsuarioRutaService, private dialog: MatDialog, private rutaService: RutaService, private categoriaService: CategoriaService, private snackBar: MatSnackBar,) { }
@@ -105,6 +115,7 @@ export class RutasComponent {
           horizontalPosition: 'center',
         });
         ruta.enEdicion = false;
+        this.obtenerRutasUsuario();
       },
       error: (error) => {
         this.snackBar.open('Error al realizar los cambios', 'Cerrar', {
@@ -149,6 +160,11 @@ export class RutasComponent {
       }
     });
   }
+
+  obtenerColorFondo(idCategoria: number): string {
+    return this.coloresCategoria[idCategoria] || '#ffffff';
+  }
+
 }
 
 

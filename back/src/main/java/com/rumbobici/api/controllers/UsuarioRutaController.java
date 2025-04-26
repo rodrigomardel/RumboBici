@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Controlador para gestionar las relaciones entre usuarios y rutas.
+ * Gestión de las relaciones entre usuarios y rutas.
  */
 @RestController
 @RequestMapping("/rutas-registradas")
@@ -29,7 +29,7 @@ public class UsuarioRutaController {
     /**
      * Obtener todas las relaciones de un usuario concreto.
      * 
-     * @return una lista de relaciones usuario-ruta.
+     * @return lista de relaciones usuario-ruta.
      */
     @GetMapping("/todas/{idUsuario}")
     public List<UsuarioRutaModel> obtenerRutasPorIdUsuario(@PathVariable Long idUsuario) {
@@ -39,7 +39,7 @@ public class UsuarioRutaController {
     /**
      * Obtener todas las relaciones usuario-ruta.
      * 
-     * @return una lista de relaciones usuario-ruta.
+     * @return lista de relaciones usuario-ruta.
      */
     @GetMapping("/todas")
     public List<UsuarioRutaModel> obtenerTodasRutasUsuarios() {
@@ -56,7 +56,7 @@ public class UsuarioRutaController {
     public UsuarioRutaModel crearRelacion(@RequestBody UsuarioRutaDto dto) {
         UsuarioRutaModel usuarioRuta = new UsuarioRutaModel();
 
-        // Crear el ID compuesto
+        // ID compuesto
         UsuarioRutaIdModel id = new UsuarioRutaIdModel(dto.getIdUsuario(), dto.getIdRuta().longValue());
         usuarioRuta.setId(id);
 
@@ -76,7 +76,7 @@ public class UsuarioRutaController {
     }
 
     /**
-     * Eliminar una relación entre un usuario y una ruta.
+     * Elimina una relación entre un usuario y una ruta.
      * 
      * @param idUsuario el ID del usuario.
      * @param idRuta    el ID de la ruta.
