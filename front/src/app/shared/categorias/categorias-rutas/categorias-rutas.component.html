@@ -3,10 +3,10 @@
     <div class="row">
         <div *ngFor="let usuarioRuta of relacionRutasUsuario" class="col-md-6 col-lg-4 mb-4">
             <div class="card">
-                <div class="card-header text-center">
+                <div class="card-header text-center" [ngStyle]="{ 'background-color': obtenerColorFondo(usuarioRuta.ruta.idCategoriaRuta.idCategoria)}">
                     <h5 class="card-title">{{ usuarioRuta.ruta.nombreRuta }}</h5>
                 </div>
-                <div class="card-body">
+                <div class="card-body" [ngStyle]="{ 'background-color': obtenerColorFondo(usuarioRuta.ruta.idCategoriaRuta.idCategoria)}">
                     <p><strong>ID:</strong> {{ usuarioRuta.ruta.idRuta }}</p>
                     <p><strong>Localidad:</strong> {{ usuarioRuta.ruta.localidadRuta }}</p>
                     <p><strong>Kilometros:</strong> {{ usuarioRuta.ruta.kilometrosRuta }}</p>
