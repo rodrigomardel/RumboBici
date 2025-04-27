@@ -1,1 +1,0 @@
-revisar enlaces header en rutas
