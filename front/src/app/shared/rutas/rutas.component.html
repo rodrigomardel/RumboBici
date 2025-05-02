@@ -10,7 +10,7 @@
   <!----------------------------------------- LISTADO RUTAS ------------------------------------------->
 </div>
 <div *ngIf="rutasUsuario && rutasUsuario.length > 0" class="container">
-  <h2 class="mb-4 title">Rutas Registradas</h2>
+  <h2 class="mb-4 title">{{ rutasUsuario.length }} Rutas Registradas</h2>
   <div class="row">
     <div *ngFor="let ruta of rutasUsuario" class="col-md-6 col-lg-4 mb-4">
       <div class="card ruta-card h-100">

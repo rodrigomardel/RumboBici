@@ -11,7 +11,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-md-6 mb-4">
       <div class="card">
         <div class="card-header user">
@@ -22,7 +21,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-md-6 mb-4">
       <div class="card">
         <div class="card-header user">
@@ -33,7 +31,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-md-6 mb-4">
       <div class="card">
         <div class="card-header user">
@@ -41,6 +38,26 @@
         </div>
         <div class="card-body">
           <p>{{ usuario.fechaNacimiento | date: 'dd/MM/yyyy' }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header user">
+          <h5>Número de rutas</h5>
+        </div>
+        <div class="card-body">
+          <p>{{ rutasUsuario.length  }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header user">
+          <h5>Kilómetros totales</h5>
+        </div>
+        <div class="card-body">
+          <p>{{ kmTotalesRutasUsuario }}</p>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ import { RutasComponent } from './shared/rutas/rutas.component';
 import { LoginComponent } from './core/login/login.component';
 import { CategoriasComponent } from './shared/categorias/categorias.component';
 import { CategoriasRutasComponent } from './shared/categorias/categorias-rutas/categorias-rutas.component';
+import { RutaUsuarioComponent } from './shared/usuarios/ruta-usuario/ruta-usuario.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'rutas', component: RutasComponent },
   { path: 'categorias', component: CategoriasComponent },
   { path: 'categorias/rutas/:idCategoria', component: CategoriasRutasComponent },
+  { path: 'rutas-usuarios/:idUsuario', component: RutaUsuarioComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' },
 ];

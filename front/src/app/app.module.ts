@@ -28,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ModalConfirmacionComponent } from './core/modal-confirmacion/modal-confirmacion.component';
+import { RutaUsuarioComponent } from './shared/usuarios/ruta-usuario/ruta-usuario.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ModalConfirmacionComponent } from './core/modal-confirmacion/modal-conf
     CategoriasComponent,
     CategoriasRutasComponent,
     ModalRutaComponent,
-    ModalConfirmacionComponent
+    ModalConfirmacionComponent,
+    RutaUsuarioComponent
   ],
   imports: [
     BrowserModule,

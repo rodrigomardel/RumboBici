@@ -75,7 +75,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/perfil']);
       },
       error: (error) => {
-        console.error('Error de login', error);
         const dialogRef = this.dialog.open(ModalConfirmacionComponent, {
           panelClass: 'custom-modal-panel',
           data: {
