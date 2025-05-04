@@ -51,8 +51,7 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 - GitHub 
 
 #### Frontend – Firebase
-- Firebase
-  - Firebase CLI
+- Firebase CLI
 
 <div align="center">
 
