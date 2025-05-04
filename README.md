@@ -8,13 +8,19 @@
 [![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white&labelColor=333333)](https://sass-lang.com/)
 [![Spring Boot 3.4.4](https://img.shields.io/badge/Spring_Boot_3.4.4-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white&labelColor=333333)](https://spring.io/projects/spring-boot)
 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white&labelColor=333333)](https://www.mysql.com/)
-<br>
+
+</br></br>
+
 ##  🚴‍♂️  Descripción
 </div>
 Aplicación web cuyo propósito es registrar y gestionar las actividades realizadas en bicicleta. Facilita un seguimiento eficiente del historial de rutas, permitiendo almacenar, consultar, editar y eliminar la información relacionada con cada actividad.
-<br>
+
+</br>
+
 Buscando promover estilos de vida saludables, sostenibles y conectar con el entorno, el uso de la bicicleta ha cobrado una relevancia especial, no solo como medio de transporte, sino también como una herramienta de descubrimiento personal y social. 
 La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, ofreciendo a los usuarios una plataforma digital donde puedan registrar y organizar sus rutas. 
+
+</br></br>
 
 <div align="center">
 
@@ -57,7 +63,8 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 
 ## 🖼️ Vista previa del proyecto
 </div>
-<br>
+
+</br></br>
 
 A continuación se muestran algunas capturas clave del funcionamiento de la aplicación para ilustrar su estructura y funcionalidades.
 
