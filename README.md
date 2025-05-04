@@ -26,8 +26,8 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 </div>
 
 ### 🎨 Identidad visual
-- SVG (Inkscape)
-- XCF (GIMP)
+- Inkscape
+- GIMP
 
 ### 💻 Frontend
 - Bootstrap 5
@@ -36,7 +36,7 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
   - SCSS
   - TypeScript
 
-### 🔧 Backend
+### ⚙ Backend
 - Spring Boot v3.4.4
   - Java v21.0.6
   - Spring Web
