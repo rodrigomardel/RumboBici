@@ -38,7 +38,3 @@ CREATE TABLE usuario_ruta (
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
     FOREIGN KEY (id_ruta) REFERENCES ruta(id_ruta) ON DELETE CASCADE
 );
-
---deployName: railway
---user: root
---pass: oyAPTkKBlwJpzGjiihnxDsZczEqkcpwk
