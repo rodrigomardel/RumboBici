@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://rumbobici-7807d.web.app/home">
-    <img src="doc/img/logo2color-rumbobici-git.png" alt="RumboBici">
+    <img src="doc/img/logo2color-rumbobici-300x150.png" alt="RumboBici">
   </a>
 
 [![Angular 19](https://img.shields.io/badge/Angular_19-DD0031?style=for-the-badge&logo=angular&logoColor=white&labelColor=333333)](https://angular.dev/)
