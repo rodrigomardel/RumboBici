@@ -49,9 +49,7 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 ### 🚀 Despliegue
 
 #### Backend – Railway
-- Railway
 - Docker
-- Linux
 - GitHub 
 
 #### Frontend – Firebase
