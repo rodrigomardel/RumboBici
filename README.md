@@ -13,7 +13,7 @@
 
 ##  🚴‍♂️  Descripción
 </div>
-Aplicación web cuyo propósito es registrar y gestionar actividades realizadas en bicicleta. Facilita un seguimiento eficiente del historial de rutas, permitiendo almacenar, consultar, editar y eliminar la información relacionada con cada actividad.
+Aplicación web cuyo propósito es registrar y gestionar actividades realizadas en bicicleta. Facilita un seguimiento eficiente del historial de rutas, permitiendo almacenar, categorizar, consultar, editar y eliminar la información relacionada con cada actividad.
 
 Buscando promover estilos de vida saludables, sostenibles y conectar con el entorno, el uso de la bicicleta ha cobrado una relevancia especial, no solo como medio de transporte, sino también como una herramienta de descubrimiento personal y social. 
 La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, ofreciendo a los usuarios una plataforma digital donde puedan registrar y organizar sus rutas. 
