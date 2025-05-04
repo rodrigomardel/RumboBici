@@ -8,11 +8,11 @@
 [![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white&labelColor=333333)](https://sass-lang.com/)
 [![Spring Boot 3.4.4](https://img.shields.io/badge/Spring_Boot_3.4.4-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white&labelColor=333333)](https://spring.io/projects/spring-boot)
 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white&labelColor=333333)](https://www.mysql.com/)
-
+<br>
 ##  🚴‍♂️  Descripción
 </div>
 Aplicación web cuyo propósito es registrar y gestionar las actividades realizadas en bicicleta. Facilita un seguimiento eficiente del historial de rutas, permitiendo almacenar, consultar, editar y eliminar la información relacionada con cada actividad.
-
+<br>
 Buscando promover estilos de vida saludables, sostenibles y conectar con el entorno, el uso de la bicicleta ha cobrado una relevancia especial, no solo como medio de transporte, sino también como una herramienta de descubrimiento personal y social. 
 La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, ofreciendo a los usuarios una plataforma digital donde puedan registrar y organizar sus rutas. 
 
@@ -26,38 +26,39 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 - XCF (GIMP)
 
 ### 💻 Frontend
-- [Bootstrap 5](https://getbootstrap.com/)
-- [Angular v19](https://angular.dev/)
+- Bootstrap 5
+- Angular v19
   - HTML5
   - SCSS
   - TypeScript
 
 ### 🔧 Backend
-- [Spring Boot v3.4.4](https://spring.io/projects/spring-boot)
+- Spring Boot v3.4.4
   - Java v21.0.6
   - Spring Web
   - Spring Data JPA
   - MySQL Driver
 
 ### 🗄️ Base de datos
-- [MySQL](https://www.mysql.com/)
+- MySQL
 
 ### 🚀 Despliegue
 
 #### Backend – Railway
-- [Railway](https://railway.app/)
+- Railway
 - Docker
 - Linux
 - GitHub 
 
 #### Frontend – Firebase
-- [Firebase](https://firebase.google.com/)
+- Firebase
   - Firebase CLI
 
 <div align="center">
 
 ## 🖼️ Vista previa del proyecto
 </div>
+<br>
 
 A continuación se muestran algunas capturas clave del funcionamiento de la aplicación para ilustrar su estructura y funcionalidades.
 
