@@ -67,7 +67,7 @@ A continuación se muestran algunas capturas clave del funcionamiento de la apli
 - Menú lateral desplegable con los distintos apartados: rutas, categorías y todos los usuarios registrados en la aplicación.
 
 > 📷 Ilustración 6.1: Captura del perfil de usuario  
-![Captura perfil de usuario](doc/img/screen-perfil.png)
+![Captura perfil de usuario](doc/img/screen-perfil-git.png.png)
 
 ---
 
@@ -84,10 +84,10 @@ A continuación se muestran algunas capturas clave del funcionamiento de la apli
 ### 🗂️ Visualización por categorías
 
 > 📷 Ilustración 6.3: Captura de las categorías  
-![Captura categorías](doc/img/screen-categorias.png)
+![Captura categorías](doc/img/screen-categorias-git.png)
 
 > 📷 Ilustración 6.4: Captura de rutas por categoría  
-![Captura rutas por categoría](doc/img/screen-rutas-categoria.png)
+![Captura rutas por categoría](doc/img/screen-rutas-categoria-git.png)
 
 ---
 
@@ -96,7 +96,7 @@ A continuación se muestran algunas capturas clave del funcionamiento de la apli
 - Posibilidad de visualizar las rutas asociadas a cada uno.
 
 > 📷 Ilustración 6.5: Captura de usuarios registrados  
-![Captura usuarios](doc/img/screen-usuarios-regitrados.png)
+![Captura usuarios](doc/img/screen-usuarios-regitrados-git.png)
 
 > 📷 Ilustración 6.6: Captura de rutas del usuario seleccionado  
-![Captura rutas del usuario](doc/img/screen-rutas-usuarios-regitrados.png)
+![Captura rutas del usuario](doc/img/screen-rutas-usuarios-regitrados-git.png)
