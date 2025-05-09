@@ -22,7 +22,50 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 
 <div align="center">
 
-## 🛠️ Tecnologías de desarrollo
+### 📁 Estructura del proyecto
+</div>
+
+```bash
+📁 root/
+|-- back/                             # API Rest
+|   |-- api/
+|   |   |-- controllers               # Endpoints
+|   |   |-- dto                       # Encapsulamiento
+|   |   |-- models                    # Entidades
+|   |   |-- repositories              # Acceso a datos
+|   |   \-- servicio                  # Service
+| 
+|-- db/                               # Database schema
+|
+|-- doc/                              # Documentación del proyecto
+|
+|-- front/                            # Frontend resources
+|   |-- public                        # Imágenes y fuentes
+|   |-- app/                          # Components frontend code
+|   |   |-- core/                     # Core components
+|   |   |   |-- constants             # URLs
+|   |   |   |-- home                  # Index APP 
+|   |   |   |-- login                 # Login de usuario 
+|   |   |   |-- modal-confirmacion    # Modal confirmación
+|   |   |   |-- models                # Entidades
+|   |   |   |-- perfil                # Perfil de usuario
+|   |   |   |-- servicios             # Service
+|   |   |-- shared/                   # Shared components
+|   |   |   |-- categorias            # Categorías disponibles
+|   |   |       |-- categorias-rutas  # Rutas de cada categoría
+|   |   |   |-- ruta                  # Rutas de usuario
+|   |   |       |-- modal-ruta        # Modal creación ruta
+|   |   |   |-- usuarios              # Usuarios registrados 
+|   |   |       |-- ruta-usuario      # Rutas de cada usuario
+|   |   |-- app-routing               # Enrutamientos
+|   |   |-- app-component             # Plantilla Global
+|   |   |-- app-module                # Importaciones de los módulos y components
+|   \-- styles                        # Global SCSS
+```
+
+<div align="center">
+
+## 🛠️ Tecnologías y herramientas
 </div>
 
 ### 🎨 Identidad visual
@@ -78,8 +121,13 @@ A continuación se muestran algunas capturas clave del funcionamiento de la apli
 - Creación de nuevas rutas.
 - Edición y eliminación de rutas existentes.
 
-> 📷 Ilustración 2.1: Captura del apartado de rutas  
+> 📷 Ilustración 2.1: Captura del apartado de rutas (listado y edición)  
 ![Captura rutas](doc/img/screen-rutas.png)
+
+> 📷 Ilustración 2.2: Captura del apartado de rutas (modal creación)
+![Captura rutas](doc/img/screen-rutas-nueva-ruta.png)
+
+
 
 ---
 
