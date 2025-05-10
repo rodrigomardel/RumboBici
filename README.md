@@ -24,6 +24,7 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 
 ## 📁 Estructura del proyecto
 </div>
+
 ```bash
 📁 root/
 |-- back/                             # API Rest
