@@ -22,9 +22,8 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 
 <div align="center">
 
-### 📁 Estructura del proyecto
+## 📁 Estructura del proyecto
 </div>
-
 ```bash
 📁 root/
 |-- back/                             # API Rest
@@ -59,9 +58,10 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 |   |   |       |-- ruta-usuario      # Rutas de cada usuario
 |   |   |-- app-routing               # Enrutamientos
 |   |   |-- app-component             # Plantilla Global
-|   |   |-- app-module                # Importaciones de los módulos y components
+|   |   |-- app-module                # Importaciones
 |   \-- styles                        # Global SCSS
 ```
+</br></br>
 
 <div align="center">
 
@@ -127,6 +127,8 @@ A continuación se muestran algunas capturas clave del funcionamiento de la apli
 > 📷 Ilustración 2.2: Captura del apartado de rutas (modal creación)
 ![Captura rutas](doc/img/screen-rutas-nueva-ruta.png)
 
+> 📷 Ilustración 2.3: Captura del apartado de rutas (ejemplo modal confirmación)
+![Captura rutas](doc/img/screen-ejemplo-modal-confirmacion.png)
 
 
 ---
