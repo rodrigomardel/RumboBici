@@ -27,40 +27,40 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 
 ```bash
 📁 root/
-|-- back/                             # Backend resources
-|   |-- api/                          # API Rest
-|   |   |-- controllers               # Endpoints
-|   |   |-- dto                       # Encapsulamiento
-|   |   |-- models                    # Entidades
-|   |   |-- repositories              # Acceso a datos
-|   \   \-- servicio                  # Service
+|-- back/                                 # Backend resources
+|   |-- api/                              # API Rest
+|   |   |-- controllers                   # Endpoints
+|   |   |-- dto                           # Encapsulamiento
+|   |   |-- models                        # Entidades
+|   |   |-- repositories                  # Acceso a datos
+|   \   \-- servicio                      # Service
 |
-|-- front/                            # Frontend resources
-|   |-- public                        # Imágenes y fuentes
-|   |-- app/                          # Components frontend code
-|   |   |-- core/                     # Core components
-|   |   |   |-- constants             # URLs
-|   |   |   |-- home                  # Index APP 
-|   |   |   |-- login                 # Login de usuario 
-|   |   |   |-- modal-confirmacion    # Modal confirmación
-|   |   |   |-- models                # Entidades
-|   |   |   |-- perfil                # Perfil de usuario
-|   |   |   |-- servicios             # Service
-|   |   |-- shared/                   # Shared components
-|   |   |   |-- categorias            # Categorías disponibles
-|   |   |       |-- categorias-rutas  # Rutas de cada categoría
-|   |   |   |-- ruta                  # Rutas de usuario
-|   |   |       |-- modal-ruta        # Modal creación ruta
-|   |   |   |-- usuarios              # Usuarios registrados 
-|   |   |       |-- ruta-usuario      # Rutas de cada usuario
-|   |   |-- app-routing               # Enrutamientos
-|   |   |-- app-component             # Plantilla Global
-|   |   |-- app-module                # Importaciones
-|   \-- styles                        # Global SCSS
+|-- front/                                # Frontend resources
+|   |-- public                            # Imágenes y fuentes
+|   |-- app/                              # Components frontend code
+|   |   |-- core/                         # Core components
+|   |   |   |-- constants                 # URLs
+|   |   |   |-- home                      # Index APP 
+|   |   |   |-- login                     # Login de usuario 
+|   |   |   |-- modal-confirmacion        # Modal confirmación
+|   |   |   |-- models                    # Entidades
+|   |   |   |-- perfil                    # Perfil de usuario
+|   |   |   |-- servicios                 # Service
+|   |   |-- shared/                       # Shared components
+|   |   |   |-- categorias                # Categorías disponibles
+|   |   |       |-- categorias-rutas      # Rutas de cada categoría
+|   |   |   |-- ruta                      # Rutas de usuario
+|   |   |       |-- modal-ruta            # Modal creación ruta
+|   |   |   |-- usuarios                  # Usuarios registrados 
+|   |   |       |-- ruta-usuario          # Rutas de cada usuario
+|   |   |-- app-routing                   # Enrutamientos
+|   |   |-- app-component                 # Plantilla Global
+|   |   |-- app-module                    # Importaciones
+|   \-- styles                            # Global SCSS
 |
-|-- db                                # Database schema
+|-- db                                    # Database schema
 |
-\-- doc                               # Documentación del proyecto
+\-- doc                                   # Documentación del proyecto
 ```
 </br></br>
 
