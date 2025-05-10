@@ -33,7 +33,7 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 |   |   |-- dto                       # Encapsulamiento
 |   |   |-- models                    # Entidades
 |   |   |-- repositories              # Acceso a datos
-|   |   \-- servicio                  # Service
+|   \   \-- servicio                  # Service
 |
 |-- front/                            # Frontend resources
 |   |-- public                        # Imágenes y fuentes
@@ -58,9 +58,9 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 |   |   |-- app-module                # Importaciones
 |   \-- styles                        # Global SCSS
 |
-|-- db/                               # Database schema
+|-- db                                # Database schema
 |
-\-- doc/                              # Documentación del proyecto
+\-- doc                               # Documentación del proyecto
 ```
 </br></br>
 
