@@ -156,7 +156,7 @@ export class RutasComponent {
       panelClass: 'custom-modal-panel',
       data: {
         titulo: '¡Espere!',
-        mensaje: `¿Seguro de que deseas eliminar la ruta "${ruta.nombreRuta}"?`,
+        mensaje: `¿Seguro que deseas eliminar la ruta "${ruta.nombreRuta}"?`,
         tituloColor: 'red'
       }
     });

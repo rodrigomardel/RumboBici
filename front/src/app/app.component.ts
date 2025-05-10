@@ -80,7 +80,7 @@ export class AppComponent {
       panelClass: 'custom-modal-panel',
       data: {
         titulo: '¡Espere!',
-        mensaje: '¿Seguro de que deseas salir?',
+        mensaje: '¿Seguro que deseas salir?',
         tituloColor: 'red'
       }
     });
