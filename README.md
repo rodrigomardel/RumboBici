@@ -27,17 +27,13 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 
 ```bash
 📁 root/
-|-- back/                             # API Rest
-|   |-- api/
+|-- back/                             # Frontend resources
+|   |-- api/                          # API Rest
 |   |   |-- controllers               # Endpoints
 |   |   |-- dto                       # Encapsulamiento
 |   |   |-- models                    # Entidades
 |   |   |-- repositories              # Acceso a datos
 |   |   \-- servicio                  # Service
-| 
-|-- db/                               # Database schema
-|
-|-- doc/                              # Documentación del proyecto
 |
 |-- front/                            # Frontend resources
 |   |-- public                        # Imágenes y fuentes
@@ -61,6 +57,10 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 |   |   |-- app-component             # Plantilla Global
 |   |   |-- app-module                # Importaciones
 |   \-- styles                        # Global SCSS
+|
+|-- db/                               # Database schema
+|
+\-- doc/                              # Documentación del proyecto
 ```
 </br></br>
 
