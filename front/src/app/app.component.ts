@@ -79,8 +79,9 @@ export class AppComponent {
     const dialogRef = this.dialog.open(ModalConfirmacionComponent, {
       panelClass: 'custom-modal-panel',
       data: {
-        titulo: 'Cierre de Sesión',
-        mensaje: '¿Estás seguro de que deseas salir?'
+        titulo: '¡Espere!',
+        mensaje: '¿Seguro de que deseas salir?',
+        tituloColor: 'red'
       }
     });
 

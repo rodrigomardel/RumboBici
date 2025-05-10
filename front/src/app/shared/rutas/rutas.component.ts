@@ -155,8 +155,9 @@ export class RutasComponent {
     const dialogRef = this.dialog.open(ModalConfirmacionComponent, {
       panelClass: 'custom-modal-panel',
       data: {
-        titulo: 'Confirmación de Eliminación',
-        mensaje: `¿Estás seguro de que deseas eliminar la ruta "${ruta.nombreRuta}"?`,
+        titulo: '¡Espere!',
+        mensaje: `¿Seguro de que deseas eliminar la ruta "${ruta.nombreRuta}"?`,
+        tituloColor: 'red'
       }
     });
 
