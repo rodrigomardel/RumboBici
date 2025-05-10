@@ -27,7 +27,7 @@ La aplicación nace con el objetivo de apoyar y potenciar este estilo de vida, o
 
 ```bash
 📁 root/
-|-- back/                             # Frontend resources
+|-- back/                             # Backend resources
 |   |-- api/                          # API Rest
 |   |   |-- controllers               # Endpoints
 |   |   |-- dto                       # Encapsulamiento
