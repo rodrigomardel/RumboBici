@@ -84,7 +84,7 @@ export class RutasComponent {
       if (result) {
         this.snackBar.open('Ruta creada correctamente', 'Cerrar', {
           duration: 5000,
-          verticalPosition: 'top',
+          verticalPosition: 'bottom',
           horizontalPosition: 'center',
         });
         this.obtenerRutasUsuario();
@@ -131,7 +131,7 @@ export class RutasComponent {
       next: () => {
         this.snackBar.open('Cambios realizados correctamente', 'Cerrar', {
           duration: 30000,
-          verticalPosition: 'top',
+          verticalPosition: 'bottom',
           horizontalPosition: 'center',
         });
         ruta.enEdicion = false;
@@ -140,7 +140,7 @@ export class RutasComponent {
       error: (error) => {
         this.snackBar.open('Error al realizar los cambios', 'Cerrar', {
           duration: 10000,
-          verticalPosition: 'top',
+          verticalPosition: 'bottom',
           horizontalPosition: 'center',
         });
       }
@@ -167,7 +167,7 @@ export class RutasComponent {
           next: () => {
             this.snackBar.open('Ruta eliminada correctamente', 'Cerrar', {
               duration: 10000,
-              verticalPosition: 'top',
+              verticalPosition: 'bottom',
               horizontalPosition: 'center',
               panelClass: ['snackbar-success']
             });
@@ -176,7 +176,7 @@ export class RutasComponent {
           error: (err) => {
             this.snackBar.open('Error al eliminar la ruta', 'Cerrar', {
               duration: 10000,
-              verticalPosition: 'top',
+              verticalPosition: 'bottom',
               horizontalPosition: 'center',
               panelClass: ['snackbar-error']
             });

@@ -83,7 +83,6 @@ main {
   background-image: url("/img/web/main-index/map-location.png");
   background-size: cover;
   background-repeat: no-repeat;
-  // height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -106,8 +105,6 @@ main {
   background-image: url("/img/web/main-index/historial-main.png");
   background-size: cover;
   background-repeat: no-repeat;
-
-  // height: 480px; 
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -175,7 +172,6 @@ main {
     background-color: $color-rojo !important;
   }
 }
-
 
 .ctn-nueva-ruta {
   display: flex;
